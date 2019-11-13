@@ -8,8 +8,10 @@ public class Compte {
     private String password;
     private String adresse;
     private String numTelephone;
-     
-    public Long getIdCompte() {
+    private boolean privilege;
+    
+
+	public Long getIdCompte() {
 		return idCompte;
 	}
 
@@ -64,22 +66,33 @@ public class Compte {
 	public void setNumTelephone(String numTelephone) {
 		this.numTelephone = numTelephone;
 	}
+	
+	public boolean isPrivilege() {
+		return privilege;
+	}
+
+	public void setPrivilege(boolean privilege) {
+		this.privilege = privilege;
+	}
 
 	public Compte() {
     	 
      }
 
-	public Compte(String nom, String prenom, String email, String password, String adresse, String numTelephone) {
+	public Compte(String nom, String prenom, String email, String password, String adresse, String numTelephone,
+			boolean privilege) {
+		super();
 		this.nom = nom;
 		this.prenom = prenom;
 		this.email = email;
 		this.password = password;
 		this.adresse = adresse;
 		this.numTelephone = numTelephone;
+		this.privilege = privilege;
 	}
 
 	public Compte(Long idCompte, String nom, String prenom, String email, String password, String adresse,
-			String numTelephone) {
+			String numTelephone, boolean privilege) {
 		super();
 		this.idCompte = idCompte;
 		this.nom = nom;
@@ -88,7 +101,10 @@ public class Compte {
 		this.password = password;
 		this.adresse = adresse;
 		this.numTelephone = numTelephone;
+		this.privilege = privilege;
 	}
+
+	
 	
 	
      

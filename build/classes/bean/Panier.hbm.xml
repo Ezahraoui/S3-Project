@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 12 nov. 2019 17:18:29 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="bean.Panier" table="PANIER">
+        <id name="idPanier" type="java.lang.Long">
+            <column name="IDPANIER" />
+            <generator class="assigned" />
+        </id>
+        <property name="total_payer" type="double">
+            <column name="TOTAL_PAYER" />
+        </property>
+        <property name="etat_commande" type="boolean">
+            <column name="ETAT_COMMANDE" />
+        </property>
+        <one-to-one name="client" class="bean.Client"></one-to-one>
+        <set name="produits" table="PRODUIT" inverse="false" lazy="true" access="field">
+            <key>
+                <column name="IDPANIER" />
+            </key>
+            <one-to-many class="bean.Produit" />
+        </set>
+        <set name="commandes" table="COMMANDE" inverse="false" lazy="true" access="field">
+            <key>
+                <column name="IDPANIER" />
+            </key>
+            <one-to-many class="bean.Commande" />
+        </set>
+    </class>
+</hibernate-mapping>

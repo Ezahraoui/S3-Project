@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 12 nov. 2019 17:18:29 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="bean.Compte" table="COMPTE">
+        <id name="idCompte" type="java.lang.Long">
+            <column name="IDCOMPTE" />
+            <generator class="assigned" />
+        </id>
+        <property name="nom" type="java.lang.String">
+            <column name="NOM" />
+        </property>
+        <property name="prenom" type="java.lang.String">
+            <column name="PRENOM" />
+        </property>
+        <property name="email" type="java.lang.String">
+            <column name="EMAIL" />
+        </property>
+        <property name="password" type="java.lang.String">
+            <column name="PASSWORD" />
+        </property>
+        <property name="adresse" type="java.lang.String">
+            <column name="ADRESSE" />
+        </property>
+        <property name="numTelephone" type="java.lang.String">
+            <column name="NUMTELEPHONE" />
+        </property>
+        <property name="privilege" type="boolean">
+            <column name="PRIVILEGE" />
+        </property>
+    </class>
+</hibernate-mapping>

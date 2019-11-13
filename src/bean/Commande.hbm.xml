@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 12 nov. 2019 17:18:29 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="bean.Commande" table="COMMANDE">
+        <id name="idCommande" type="java.lang.Long">
+            <column name="IDCOMMANDE" />
+            <generator class="assigned" />
+        </id>
+        <property name="date_commande" type="java.util.Date">
+            <column name="DATE_COMMANDE" />
+        </property>
+        <property name="date_livraison" type="java.util.Date">
+            <column name="DATE_LIVRAISON" />
+        </property>
+        <many-to-one name="panier" class="bean.Panier" access="field" fetch="join">
+            <column name="PANIER" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>
