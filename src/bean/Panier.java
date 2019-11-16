@@ -5,6 +5,7 @@ import java.util.Set;
 
 public class Panier {
 	private Long idPanier;
+	private String nom_panier;
 	private double total_payer;
 	private boolean etat_commande;
 	private Client client;
@@ -37,6 +38,15 @@ public class Panier {
 	public void setClient(Client client) {
 		this.client = client;
 	}
+	
+	
+	
+	public String getNom_panier() {
+		return nom_panier;
+	}
+	public void setNom_panier(String nom_panier) {
+		this.nom_panier = nom_panier;
+	}
 	public Panier() {
 		
 	}
@@ -45,9 +55,11 @@ public class Panier {
 		this.total_payer = total_payer;
 		this.etat_commande = etat_commande;
 	}
-	public Panier(Long idPanier, double total_payer, boolean etat_commande) {
+
+	public Panier(Long idPanier, String nom_panier, double total_payer, boolean etat_commande) {
 		super();
 		this.idPanier = idPanier;
+		this.nom_panier = nom_panier;
 		this.total_payer = total_payer;
 		this.etat_commande = etat_commande;
 	}

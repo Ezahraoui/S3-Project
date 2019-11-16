@@ -2,18 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9445415b-a40f-4f0e-be06-620b6a915540" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebContent/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/WebContent/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/bean/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/bean/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/bean/Compte.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/bean/Compte.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/bean/AdministrateurTechnique.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/bean/AdministrateurTechnique.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/bean/Categorie.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/bean/Categorie.hbm.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/bean/Client.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/bean/Client.hbm.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/bean/Commande.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/bean/Commande.hbm.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/bean/Compte.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/bean/Compte.hbm.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/bean/Demande.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/bean/Demande.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/bean/Panier.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/bean/Panier.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/bean/Demande.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/bean/Demande.hbm.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/bean/Panier.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/bean/Panier.hbm.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/bean/Produit.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/bean/Produit.hbm.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bean/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bean/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bean/Compte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bean/Compte.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bean/AdministrateurTechnique.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bean/AdministrateurTechnique.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bean/Categorie.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/bean/Categorie.hbm.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bean/Client.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/bean/Client.hbm.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bean/Commande.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/bean/Commande.hbm.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bean/Compte.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/bean/Compte.hbm.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bean/Demande.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/bean/Demande.hbm.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/bean/Demande.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bean/Demande.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bean/Panier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bean/Panier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bean/Panier.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/bean/Panier.hbm.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bean/Produit.hbm.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/bean/Produit.hbm.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/hibernate.cfg.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -66,6 +74,7 @@
       <workItem from="1573138541289" duration="181000" />
       <workItem from="1573476308645" duration="1501000" />
       <workItem from="1573652733012" duration="65000" />
+      <workItem from="1573766431643" duration="1708000" />
     </task>
     <servers />
   </component>

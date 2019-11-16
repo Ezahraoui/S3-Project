@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 12 nov. 2019 17:18:29 by Hibernate Tools 3.5.0.Final -->
+<!-- Generated 14 nov. 2019 21:24:05 by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
     <class name="bean.Commande" table="COMMANDE">
         <id name="idCommande" type="java.lang.Long">

@@ -6,9 +6,10 @@ public class Compte {
 	private String prenom;
     private String email;
     private String password;
+    private String cin;
     private String adresse;
     private String numTelephone;
-    private boolean privilege;
+    private String privilege;
     
 
 	public Long getIdCompte() {
@@ -67,11 +68,21 @@ public class Compte {
 		this.numTelephone = numTelephone;
 	}
 	
-	public boolean isPrivilege() {
+	
+	public String getCin() {
+		return cin;
+	}
+
+	public void setCin(String cin) {
+		this.cin = cin;
+	}
+
+
+	public String getPrivilege() {
 		return privilege;
 	}
 
-	public void setPrivilege(boolean privilege) {
+	public void setPrivilege(String privilege) {
 		this.privilege = privilege;
 	}
 
@@ -79,31 +90,36 @@ public class Compte {
     	 
      }
 
-	public Compte(String nom, String prenom, String email, String password, String adresse, String numTelephone,
-			boolean privilege) {
+	public Compte(String nom, String prenom, String email, String password, String cin, String adresse,
+			String numTelephone, String privilege) {
 		super();
 		this.nom = nom;
 		this.prenom = prenom;
 		this.email = email;
 		this.password = password;
+		this.cin = cin;
 		this.adresse = adresse;
 		this.numTelephone = numTelephone;
 		this.privilege = privilege;
 	}
 
-	public Compte(Long idCompte, String nom, String prenom, String email, String password, String adresse,
-			String numTelephone, boolean privilege) {
+	public Compte(Long idCompte, String nom, String prenom, String email, String password, String cin, String adresse,
+			String numTelephone, String privilege) {
 		super();
 		this.idCompte = idCompte;
 		this.nom = nom;
 		this.prenom = prenom;
 		this.email = email;
 		this.password = password;
+		this.cin = cin;
 		this.adresse = adresse;
 		this.numTelephone = numTelephone;
 		this.privilege = privilege;
 	}
 
+
+	
+	
 	
 	
 	

@@ -36,17 +36,16 @@ public class Client extends Compte{
 		this.etat = etat;
 	}
 
-	public Client(Long idCompte, String nom, String prenom, String email, String password, String adresse,
-			String numTelephone, boolean privilege) {
-		super(idCompte, nom, prenom, email, password, adresse, numTelephone, privilege);
-		// TODO Auto-generated constructor stub
+	public Client(boolean etat, Panier panier, Set<Demande> demandes) {
+		super();
+		this.etat = etat;
+		this.panier = panier;
+		this.demandes = demandes;
 	}
 
-	public Client(String nom, String prenom, String email, String password, String adresse, String numTelephone,
-			boolean privilege) {
-		super(nom, prenom, email, password, adresse, numTelephone, privilege);
-		// TODO Auto-generated constructor stub
-	}
+	
+	
+	
 
     
     

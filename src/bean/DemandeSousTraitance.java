@@ -31,9 +31,4 @@ public class DemandeSousTraitance extends Demande{
 		this.capaciteAutoFinancement = capaciteAutoFinancement;
 	}
 	
-	
-
-	
-
-	
 }

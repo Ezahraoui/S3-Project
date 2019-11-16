@@ -5,6 +5,7 @@ public class Demande {
 	private String sujet;
 	private byte[] document_joindre;
 	private Client client;
+	private AdministrateurTechnique administrateurTechnique;
 	
 	public Long getIdDemande() {
 		return idDemande;
