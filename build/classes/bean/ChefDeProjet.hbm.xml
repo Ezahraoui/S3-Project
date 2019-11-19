@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 19 nov. 2019 01:40:27 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <joined-subclass name="bean.ChefDeProjet" extends="bean.Compte" table="CHEFDEPROJET" lazy="false">
+        <key>
+            <column name="ID_COMPTE" />
+        </key>
+        <property name="etatCP" type="boolean">
+            <column name="ETATCP" />
+        </property>
+        <property name="rate" type="double">
+            <column name="RATE" />
+        </property>
+        <property name="lien_git_CP" type="java.lang.String">
+            <column name="LIEN_GIT_CP" />
+        </property>
+    </joined-subclass>
+</hibernate-mapping>

@@ -16,15 +16,7 @@ public class DemandeMaintenance extends Demande{
 		// TODO Auto-generated constructor stub
 	}
 
-	public DemandeMaintenance(Long idDemande, String sujet, byte[] document_joindre) {
-		super(idDemande, sujet, document_joindre);
-		// TODO Auto-generated constructor stub
-	}
-
-	public DemandeMaintenance(String sujet, byte[] document_joindre) {
-		super(sujet, document_joindre);
-		// TODO Auto-generated constructor stub
-	}
+	
 
 	public DemandeMaintenance(String motif) {
 		super();
@@ -32,6 +24,4 @@ public class DemandeMaintenance extends Demande{
 	}
 	
 	
-	
-
 }

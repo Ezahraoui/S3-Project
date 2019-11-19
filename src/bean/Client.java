@@ -16,14 +16,22 @@ public class Client extends Compte{
         this.etat = etat;
     }
     
-    
-
     public Panier getPanier() {
 		return panier;
 	}
 
 	public void setPanier(Panier panier) {
 		this.panier = panier;
+	}
+	
+	
+
+	public Set<Demande> getDemandes() {
+		return demandes;
+	}
+
+	public void setDemandes(Set<Demande> demandes) {
+		this.demandes = demandes;
 	}
 
 	public Client() {

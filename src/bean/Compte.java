@@ -1,24 +1,35 @@
 package bean;
 
 public class Compte {
-	private Long idCompte;
+	private Long id_compte;
     private String nom;
 	private String prenom;
     private String email;
     private String password;
     private String cin;
     private String adresse;
-    private String numTelephone;
+    private String num_telephone;
     private String privilege;
     
+    
+    
 
-	public Long getIdCompte() {
-		return idCompte;
+	public Long getId_compte() {
+		return id_compte;
 	}
 
-	public void setIdCompte(Long idCompte) {
-		this.idCompte = idCompte;
+	public void setId_compte(Long id_compte) {
+		this.id_compte = id_compte;
 	}
+
+	public String getNum_telephone() {
+		return num_telephone;
+	}
+
+	public void setNum_telephone(String num_telephone) {
+		this.num_telephone = num_telephone;
+	}
+
 
 	public String getNom() {
 		return nom;
@@ -61,11 +72,11 @@ public class Compte {
 	}
 
 	public String getNumTelephone() {
-		return numTelephone;
+		return num_telephone;
 	}
 
-	public void setNumTelephone(String numTelephone) {
-		this.numTelephone = numTelephone;
+	public void setNumTelephone(String num_telephone) {
+		this.num_telephone = num_telephone;
 	}
 	
 	
@@ -91,7 +102,7 @@ public class Compte {
      }
 
 	public Compte(String nom, String prenom, String email, String password, String cin, String adresse,
-			String numTelephone, String privilege) {
+			String num_telephone, String privilege) {
 		super();
 		this.nom = nom;
 		this.prenom = prenom;
@@ -99,21 +110,21 @@ public class Compte {
 		this.password = password;
 		this.cin = cin;
 		this.adresse = adresse;
-		this.numTelephone = numTelephone;
+		this.num_telephone = num_telephone;
 		this.privilege = privilege;
 	}
 
-	public Compte(Long idCompte, String nom, String prenom, String email, String password, String cin, String adresse,
-			String numTelephone, String privilege) {
+	public Compte(Long id_compte, String nom, String prenom, String email, String password, String cin, String adresse,
+			String num_telephone, String privilege) {
 		super();
-		this.idCompte = idCompte;
+		this.id_compte = id_compte;
 		this.nom = nom;
 		this.prenom = prenom;
 		this.email = email;
 		this.password = password;
 		this.cin = cin;
 		this.adresse = adresse;
-		this.numTelephone = numTelephone;
+		this.num_telephone = num_telephone;
 		this.privilege = privilege;
 	}
 

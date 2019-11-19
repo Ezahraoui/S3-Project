@@ -1,37 +1,32 @@
 package util;
 
+import org.hibernate.HibernateException;
 import org.hibernate.SessionFactory;
+import org.hibernate.boot.Metadata;
+import org.hibernate.boot.MetadataSources;
+import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
 public class HibernateUtil {
 
-	private static SessionFactory sessionFactory;
-	
-	private static SessionFactory buildSessionFactory() {
+	private static final SessionFactory sessionFactory = buildSessionFactory();
+
+    private static SessionFactory buildSessionFactory() {
         try {
-            // Create the SessionFactory from hibernate.cfg.xml
-        	Configuration configuration = new Configuration();
-        	configuration.configure("hibernate.cfg.xml");
-        	System.out.println("Hibernate Configuration loaded");
-        	
-        	ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
-        	System.out.println("Hibernate serviceRegistry created");
-        	
-        	SessionFactory sessionFactory = configuration.buildSessionFactory(serviceRegistry);
-        	
-            return sessionFactory;
-        }
-        catch (Throwable ex) {
-            System.err.println("Initial SessionFactory creation failed." + ex);
-            ex.printStackTrace();
-            throw new ExceptionInInitializerError(ex);
+            StandardServiceRegistry standardRegistry = new StandardServiceRegistryBuilder()
+                    .configure("hibernate.cfg.xml").build();
+            Metadata metadata = new MetadataSources(standardRegistry).getMetadataBuilder().build();
+            return metadata.getSessionFactoryBuilder().build();
+
+        } catch (HibernateException he) {
+            System.out.println("Session Factory creation failure");
+            throw he;
         }
     }
-	
-	public static SessionFactory getSessionFactory() {
-		if(sessionFactory == null) sessionFactory = buildSessionFactory();
+
+    public static SessionFactory getSessionFactory() {
         return sessionFactory;
     }
 }

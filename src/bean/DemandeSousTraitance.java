@@ -1,14 +1,14 @@
 package bean;
 
 public class DemandeSousTraitance extends Demande{
-	private float capaciteAutoFinancement;
+	private float capaciteFinancement;
 
-	public float getCapaciteAutoFinancement() {
-		return capaciteAutoFinancement;
+	public float getCapaciteFinancement() {
+		return capaciteFinancement;
 	}
 
-	public void setCapaciteAutoFinancement(float capaciteAutoFinancement) {
-		this.capaciteAutoFinancement = capaciteAutoFinancement;
+	public void setCapaciteFinancement(float capaciteFinancement) {
+		this.capaciteFinancement = capaciteFinancement;
 	}
 
 	public DemandeSousTraitance() {
@@ -16,19 +16,10 @@ public class DemandeSousTraitance extends Demande{
 		// TODO Auto-generated constructor stub
 	}
 
-	public DemandeSousTraitance(Long idDemande, String sujet, byte[] document_joindre) {
-		super(idDemande, sujet, document_joindre);
-		// TODO Auto-generated constructor stub
-	}
 
-	public DemandeSousTraitance(String sujet, byte[] document_joindre) {
-		super(sujet, document_joindre);
-		// TODO Auto-generated constructor stub
-	}
-
-	public DemandeSousTraitance(float capaciteAutoFinancement) {
+	public DemandeSousTraitance(float capaciteFinancement) {
 		super();
-		this.capaciteAutoFinancement = capaciteAutoFinancement;
+		this.capaciteFinancement = capaciteFinancement;
 	}
 	
 }

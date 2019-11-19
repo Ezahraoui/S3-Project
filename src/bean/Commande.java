@@ -3,17 +3,26 @@ package bean;
 import java.util.Date;
 
 public class Commande {
-	private Long idCommande; 
+	private Long id_commande; 
 	private Date date_commande;
 	private Date date_livraison;
 	private Panier panier;
 	
-	public Long getIdCommande() {
-		return idCommande;
+	
+	
+	public Long getId_commande() {
+		return id_commande;
 	}
-	public void setIdCommande(Long idCommande) {
-		this.idCommande = idCommande;
+	public void setId_commande(Long id_commande) {
+		this.id_commande = id_commande;
 	}
+	public Panier getPanier() {
+		return panier;
+	}
+	public void setPanier(Panier panier) {
+		this.panier = panier;
+	}
+	
 	public Date getDate_commande() {
 		return date_commande;
 	}
@@ -35,9 +44,9 @@ public class Commande {
 		this.date_commande = date_commande;
 		this.date_livraison = date_livraison;
 	}
-	public Commande(Long idCommande, Date date_commande, Date date_livraison) {
+	public Commande(Long id_commande, Date date_commande, Date date_livraison) {
 		super();
-		this.idCommande = idCommande;
+		this.id_commande = id_commande;
 		this.date_commande = date_commande;
 		this.date_livraison = date_livraison;
 	}

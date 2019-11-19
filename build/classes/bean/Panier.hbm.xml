@@ -1,13 +1,16 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 14 nov. 2019 21:24:05 by Hibernate Tools 3.5.0.Final -->
+<!-- Generated 19 nov. 2019 01:41:54 by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
     <class name="bean.Panier" table="PANIER">
-        <id name="idPanier" type="java.lang.Long">
+        <id name="id_panier" type="java.lang.Long" access="field">
             <column name="ID_PANIER" />
             <generator class="assigned" />
         </id>
+        <property name="nom_panier" type="java.lang.String">
+            <column name="NOM_PANIER" />
+        </property>
         <property name="total_payer" type="double">
             <column name="TOTAL_PAYER" />
         </property>
@@ -17,7 +20,7 @@
         <one-to-one name="client" class="bean.Client"></one-to-one>
         <set name="produits" table="PRODUIT" inverse="false" lazy="true" access="field">
             <key>
-                <column name="IDPANIER" />
+                <column name="ID_PANIER" />
             </key>
             <one-to-many class="bean.Produit" />
         </set>
