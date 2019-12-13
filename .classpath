@@ -35,8 +35,9 @@
 	<classpathentry kind="lib" path="C:/Users/lenovo/Desktop/mysql-connector-java-5.1.48/mysql-connector-java-5.1.48/mysql-connector-java-5.1.48.jar"/>
 	<classpathentry kind="lib" path="C:/Users/lenovo/Downloads/jar_files/commons-io-2.6.jar"/>
 	<classpathentry kind="lib" path="C:/Users/lenovo/Downloads/jar_files/fileupload-1.3.3.jar"/>
-	<classpathentry kind="lib" path="C:/Users/lenovo/Downloads/jar_files (1)/servlet-api-5.0.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/lenovo/Downloads/jar_files (2)/jstl-1.2.jar"/>
 	<classpathentry kind="lib" path="D:/WorkspaceEclipse/S3_Project/WebContent/WEB-INF/lib/javassist-3.12.1.GA.jar"/>
+	<classpathentry kind="lib" path="D:/WorkspaceEclipse/S3_Project/WebContent/WEB-INF/lib/jstl-1.2_1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/lenovo/Downloads/apache-tomcat-9.0.22/lib/servlet-api.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

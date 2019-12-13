@@ -1,37 +1,63 @@
 package bean;
 
-public class ChefDeProjet extends Compte{
-	private boolean etatCP;
-	private String lien_git_CP;
-	private double rate;
+public class ChefDeProjet{
+	private Long id_chef_projet;
+    private String nomCP;
+	private String prenomCP;
+    private String emailCP;
+    private String passwordCP;
+    private String githubCP;
+    private String adresseCP;
+    private String num_telephoneCP;
+	public Long getId_chef_projet() {
+		return id_chef_projet;
+	}
+	public void setId_chef_projet(Long id_chef_projet) {
+		this.id_chef_projet = id_chef_projet;
+	}
+	public String getNomCP() {
+		return nomCP;
+	}
+	public void setNomCP(String nomCP) {
+		this.nomCP = nomCP;
+	}
+	public String getPrenomCP() {
+		return prenomCP;
+	}
+	public void setPrenomCP(String prenomCP) {
+		this.prenomCP = prenomCP;
+	}
+	public String getEmailCP() {
+		return emailCP;
+	}
+	public void setEmailCP(String emailCP) {
+		this.emailCP = emailCP;
+	}
+	public String getPasswordCP() {
+		return passwordCP;
+	}
+	public void setPasswordCP(String passwordCP) {
+		this.passwordCP = passwordCP;
+	}
 	
-	public boolean isEtatCP() {
-		return etatCP;
+	public String getGithubCP() {
+		return githubCP;
 	}
-	public void setEtatCP(boolean etatCP) {
-		this.etatCP = etatCP;
+	public void setGithubCP(String githubCP) {
+		this.githubCP = githubCP;
 	}
-	public String getLien_git_CP() {
-		return lien_git_CP;
+	public String getAdresseCP() {
+		return adresseCP;
 	}
-	public void setLien_git_CP(String lien_git_CP) {
-		this.lien_git_CP = lien_git_CP;
+	public void setAdresseCP(String adresseCP) {
+		this.adresseCP = adresseCP;
 	}
-	public double getRate() {
-		return rate;
+	public String getNum_telephoneCP() {
+		return num_telephoneCP;
 	}
-	public void setRate(double rate) {
-		this.rate = rate;
+	public void setNum_telephoneCP(String num_telephoneCP) {
+		this.num_telephoneCP = num_telephoneCP;
 	}
-	public ChefDeProjet() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	
-	public ChefDeProjet(boolean etatCP, String lien_git_CP, double rate) {
-		super();
-		this.etatCP = etatCP;
-		this.lien_git_CP = lien_git_CP;
-		this.rate = rate;
-	}
+    
+    
 }
