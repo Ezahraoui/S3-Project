@@ -1,13 +1,17 @@
 package bean;
 
+
+import java.sql.Blob;
+
 public class DemandeMaintenance{
 	private Long id_demande_maintenance;
 	private String sujet;
 	private String description;
-	private byte[] document_joindre;
+	private Blob document_joindre;
 	private String observation_complementaire;
+	private int etat;
 	private Client client;
-	private AdministrateurTechnique administrateurTechnique;
+	private ChefDeProjet chefDeProjet;
 	
 	public Long getId_demande_maintenance() {
 		return id_demande_maintenance;
@@ -28,10 +32,10 @@ public class DemandeMaintenance{
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public byte[] getDocument_joindre() {
+	public Blob getDocument_joindre() {
 		return document_joindre;
 	}
-	public void setDocument_joindre(byte[] document_joindre) {
+	public void setDocument_joindre(Blob document_joindre) {
 		this.document_joindre = document_joindre;
 	}
 	
@@ -47,23 +51,25 @@ public class DemandeMaintenance{
 	public void setClient(Client client) {
 		this.client = client;
 	}
-	public AdministrateurTechnique getAdministrateurTechnique() {
-		return administrateurTechnique;
+	
+	public ChefDeProjet getChefDeProjet() {
+		return chefDeProjet;
 	}
-	public void setAdministrateurTechnique(AdministrateurTechnique administrateurTechnique) {
-		this.administrateurTechnique = administrateurTechnique;
+	public void setChefDeProjet(ChefDeProjet chefDeProjet) {
+		this.chefDeProjet = chefDeProjet;
 	}
-	public DemandeMaintenance(Long id_demande_maintenance, String sujet, String description, byte[] document_joindre,
-			String observation_complementaire) {
-		super();
-		this.id_demande_maintenance = id_demande_maintenance;
-		this.sujet = sujet;
-		this.description = description;
-		this.document_joindre = document_joindre;
-		this.observation_complementaire = observation_complementaire;
+
+	public int getEtat() {
+		return etat;
+	}
+	public void setEtat(int etat) {
+		this.etat = etat;
 	}
 	public DemandeMaintenance() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+	public DemandeMaintenance(Blob document_joindre) {
+		this.document_joindre=document_joindre;
 	}	
 }

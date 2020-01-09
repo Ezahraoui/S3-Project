@@ -46,6 +46,48 @@ public class ClientDAO {
 				conn.close();	
 			return client;
 			}
+	
+	
+	public boolean validate(Client client) throws ClassNotFoundException {
+		boolean status = false;
+		try{
+			Connection conn = ClientDAO.getConnection();
+			String sql = "INSERT INTO client (NOM, PRENOM, EMAIL, PASSWORD, CIN, ADRESSE, NUM_TELEPHONE) values (?, ?, ?, ?, ?, ?, ?)";
+			PreparedStatement statement = conn.prepareStatement(sql);
+			statement.setString(1, client.getNomCLT());
+	        statement.setString(2, client.getPrenomCLT());
+	        statement.setString(3, client.getEmailCLT());
+	        statement.setString(4, client.getPasswordCLT());
+	        statement.setString(5, client.getCinCLT());
+	        statement.setString(6, client.getAdresseCLT());
+	        statement.setString(7, client.getNum_telephoneCLT());
+	        
+			System.out.println(statement);
+			statement.executeUpdate();
+		} catch (SQLException e) {
+            // process sql exception
+            printSQLException(e);
+        }
+        return status;		
+    }
+	
+	private void printSQLException(SQLException ex) {
+        for (Throwable e: ex) {
+            if (e instanceof SQLException) {
+                e.printStackTrace(System.err);
+                System.err.println("SQLState: " + ((SQLException) e).getSQLState());
+                System.err.println("Error Code: " + ((SQLException) e).getErrorCode());
+                System.err.println("Message: " + e.getMessage());
+                Throwable t = ex.getCause();
+                while (t != null) {
+                    System.out.println("Cause: " + t);
+                    t = t.getCause();
+                }
+            }
+        }
+    }
+	
+	
 	public static List<Client> getAll(){
 	    List<Client> clients = new ArrayList<Client>();
 	    try{

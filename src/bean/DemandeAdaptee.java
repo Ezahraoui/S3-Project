@@ -1,13 +1,16 @@
 package bean;
 
+import java.sql.Blob;
+
 public class DemandeAdaptee{
 	private Long id_demande_adaptee;
 	private String sujet;
-	private byte[] document_joindre;
-	private String message;
+	private String description;
+	private Blob document_joindre;
 	private double capaciteFinancement;
+	private int etat;
 	private Client client;
-	private AdministrateurTechnique administrateurTechnique;
+	private ChefDeProjet chefDeProjet;
 	
 	public Long getId_demande_adaptee() {
 		return id_demande_adaptee;
@@ -21,17 +24,17 @@ public class DemandeAdaptee{
 	public void setSujet(String sujet) {
 		this.sujet = sujet;
 	}
-	public byte[] getDocument_joindre() {
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	public Blob getDocument_joindre() {
 		return document_joindre;
 	}
-	public void setDocument_joindre(byte[] document_joindre) {
+	public void setDocument_joindre(Blob document_joindre) {
 		this.document_joindre = document_joindre;
-	}
-	public String getMessage() {
-		return message;
-	}
-	public void setMessage(String message) {
-		this.message = message;
 	}
 	public double getCapaciteFinancement() {
 		return capaciteFinancement;
@@ -39,32 +42,32 @@ public class DemandeAdaptee{
 	public void setCapaciteFinancement(double capaciteFinancement) {
 		this.capaciteFinancement = capaciteFinancement;
 	}
-	
 	public Client getClient() {
 		return client;
 	}
 	public void setClient(Client client) {
 		this.client = client;
 	}
+	public ChefDeProjet getChefDeProjet() {
+		return chefDeProjet;
+	}
+	public void setChefDeProjet(ChefDeProjet chefDeProjet) {
+		this.chefDeProjet = chefDeProjet;
+	}
 	
-	public AdministrateurTechnique getAdministrateurTechnique() {
-		return administrateurTechnique;
+	public int getEtat() {
+		return etat;
 	}
-	public void setAdministrateurTechnique(AdministrateurTechnique administrateurTechnique) {
-		this.administrateurTechnique = administrateurTechnique;
-	}
-	public DemandeAdaptee(Long id_demande_adaptee, String sujet, byte[] document_joindre, String message,
-			double capaciteFinancement) {
-		super();
-		this.id_demande_adaptee = id_demande_adaptee;
-		this.sujet = sujet;
-		this.document_joindre = document_joindre;
-		this.message = message;
-		this.capaciteFinancement = capaciteFinancement;
+	public void setEtat(int etat) {
+		this.etat = etat;
 	}
 	public DemandeAdaptee() {
-		super();
-		// TODO Auto-generated constructor stub
+	
 	}
+	
+	public DemandeAdaptee(Blob document_joindre) {
+		this.document_joindre=document_joindre;
+	}
+	
 	
 }

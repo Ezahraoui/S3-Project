@@ -51,6 +51,64 @@ public class ChefDeProjetDAO {
 				conn.close();	
 			return chefDeProjet;
 			}
+	
+	public static long getId(String nom){
+        long a = 0;
+        try {
+        	Connection conn = ChefDeProjetDAO.getConnection();
+        	String sql = "select ID_CHEF_PROJET from chef_de_projet where NOM=? ";
+        	PreparedStatement statement = conn.prepareStatement(sql);
+        	statement.setString(1, nom);
+            ResultSet res = statement.executeQuery(sql);
+            if(res.next()){
+                a = res.getLong(1);
+            }
+        }catch (Exception e){
+
+        }
+
+        return a ;
+    }
+	
+	public boolean validate(ChefDeProjet chef_de_projet) throws ClassNotFoundException {
+		boolean status = false;
+		try{
+			Connection conn = ChefDeProjetDAO.getConnection();
+			String sql = "INSERT INTO chef_de_projet (NOM, PRENOM, EMAIL, PASSWORD, GITHUB, ADRESSE, NUM_TELEPHONE) values (?, ?, ?, ?, ?, ?, ?)";
+			PreparedStatement statement = conn.prepareStatement(sql);
+			statement.setString(1, chef_de_projet.getNomCP());
+	        statement.setString(2, chef_de_projet.getPrenomCP());
+	        statement.setString(3, chef_de_projet.getEmailCP());
+	        statement.setString(4, chef_de_projet.getPasswordCP());
+	        statement.setString(5, chef_de_projet.getGithubCP());
+	        statement.setString(6, chef_de_projet.getAdresseCP());
+	        statement.setString(7, chef_de_projet.getNum_telephoneCP());
+			System.out.println(statement);
+			statement.executeUpdate();
+		} catch (SQLException e) {
+            // process sql exception
+            printSQLException(e);
+        }
+        return status;		
+    }
+	
+	private void printSQLException(SQLException ex) {
+        for (Throwable e: ex) {
+            if (e instanceof SQLException) {
+                e.printStackTrace(System.err);
+                System.err.println("SQLState: " + ((SQLException) e).getSQLState());
+                System.err.println("Error Code: " + ((SQLException) e).getErrorCode());
+                System.err.println("Message: " + e.getMessage());
+                Throwable t = ex.getCause();
+                while (t != null) {
+                    System.out.println("Cause: " + t);
+                    t = t.getCause();
+                }
+            }
+        }
+    }
+	
+	
 	public static List<ChefDeProjet> getAll(){
         List<ChefDeProjet> chefsDeProjet = new ArrayList<ChefDeProjet>();
         try{

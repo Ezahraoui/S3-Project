@@ -1,31 +1,40 @@
 package bean;
 
-import java.util.HashSet;
+
+import java.sql.Blob;
 import java.util.Set;
 
 public class Produit {
 	private Long id_produit;
-	private String lien_git;
-	private String nom_logiciel;
-	private String nom_technologie;
-	private Float prix;
-	private Float version;
-	private Categorie categorie;
-	private Set<Panier> paniers = new HashSet<Panier>();
-	
-	
-	
+	private String nom;
+	private Double prix;
+	private Blob document;
+	private Set<Panier> paniers;
+	private Set<Commande> commandes;
 	public Long getId_produit() {
 		return id_produit;
 	}
 	public void setId_produit(Long id_produit) {
 		this.id_produit = id_produit;
 	}
-	public Categorie getCategorie() {
-		return categorie;
+	public String getNom() {
+		return nom;
 	}
-	public void setCategorie(Categorie categorie) {
-		this.categorie = categorie;
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+	public Double getPrix() {
+		return prix;
+	}
+	public void setPrix(Double prix) {
+		this.prix = prix;
+	}
+	
+	public Blob getDocument() {
+		return document;
+	}
+	public void setDocument(Blob document) {
+		this.document = document;
 	}
 	public Set<Panier> getPaniers() {
 		return paniers;
@@ -33,60 +42,17 @@ public class Produit {
 	public void setPaniers(Set<Panier> paniers) {
 		this.paniers = paniers;
 	}
-
-	public String getLien_git() {
-		return lien_git;
+	public Set<Commande> getCommandes() {
+		return commandes;
 	}
-	public void setLien_git(String lien_git) {
-		this.lien_git = lien_git;
-	}
-	public String getNom_logiciel() {
-		return nom_logiciel;
-	}
-	public void setNom_logiciel(String nom_logiciel) {
-		this.nom_logiciel = nom_logiciel;
-	}
-	public String getNom_technologie() {
-		return nom_technologie;
-	}
-	public void setNom_technologie(String nom_technologie) {
-		this.nom_technologie = nom_technologie;
-	}
-	public Float getPrix() {
-		return prix;
-	}
-	public void setPrix(Float prix) {
-		this.prix = prix;
-	}
-	public Float getVersion() {
-		return version;
-	}
-	public void setVersion(Float version) {
-		this.version = version;
+	public void setCommandes(Set<Commande> commandes) {
+		this.commandes = commandes;
 	}
 	public Produit() {
-		super();
-		// TODO Auto-generated constructor stub
+		
 	}
-	public Produit(String lien_git, String nom_logiciel, String nom_technologie, Float prix, Float version) {
-		super();
-		this.lien_git = lien_git;
-		this.nom_logiciel = nom_logiciel;
-		this.nom_technologie = nom_technologie;
-		this.prix = prix;
-		this.version = version;
-	}
-	public Produit(Long id_produit, String lien_git, String nom_logiciel, String nom_technologie, Float prix,
-			Float version) {
-		super();
-		this.id_produit = id_produit;
-		this.lien_git = lien_git;
-		this.nom_logiciel = nom_logiciel;
-		this.nom_technologie = nom_technologie;
-		this.prix = prix;
-		this.version = version;
+	public Produit(Blob document) {
+		this.document=document;
 	}
 	
-	
-
 }

@@ -6,6 +6,7 @@ public class ChefDeProjet{
 	private String prenomCP;
     private String emailCP;
     private String passwordCP;
+    private String cinCP;
     private String githubCP;
     private String adresseCP;
     private String num_telephoneCP;
@@ -32,6 +33,12 @@ public class ChefDeProjet{
 	}
 	public void setEmailCP(String emailCP) {
 		this.emailCP = emailCP;
+	}
+	public String getCinCP() {
+		return cinCP;
+	}
+	public void setCinCP(String cinCP) {
+		this.cinCP = cinCP;
 	}
 	public String getPasswordCP() {
 		return passwordCP;

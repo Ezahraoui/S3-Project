@@ -55,6 +55,11 @@
 								<li class="list-inline-item"><a href="#"><i
 										class="fa fa-envelope"></i></a></li>
 							</ul>
+							<div class="logout">
+								<a href="login.jsp" class="login-btn"><i class="fa fa-sign-in"></i><span
+									class="d-none d-md-inline-block">Se déconnecter</span></a>
+
+							</div>
 							<!-- <ul class="social-custom list-inline">
 								<li class="list-inline-item"><a href="#"><i
 										class="fa fa-facebook"></i></a></li>

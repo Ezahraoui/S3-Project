@@ -15,7 +15,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 
+import bean.ChefDeProjet;
 import bean.DemandeMaintenance;
+
+import dao.ChefDeProjetDAO;
 import dao.DemandeMaintenanceDAO;
 
 /**
@@ -46,9 +49,12 @@ public class DemandeMaintenanceServlet extends HttpServlet {
 		
         List<DemandeMaintenance> demandesMaintenance = DemandeMaintenanceDAO.getAll();
         request.setAttribute("demandesMaintenance", demandesMaintenance);
+        List<ChefDeProjet> chefsDeProjet = ChefDeProjetDAO.getAll();
+        request.setAttribute("chefsDeProjet", chefsDeProjet);
         //request.getRequestDispatcher("traiterDemande.jsp").include(request,response);
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/traiterDemande.jsp");
         dispatcher.forward(request, response);
+        
 	}
 
 	/**

@@ -1,5 +1,9 @@
+<%@page import="bean.ChefDeProjet"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
 <%@page import="java.sql.*"%>
+<%@ page import="java.util.ArrayList"%>
+<jsp:useBean id="cpr" class="bean.ChefDeProjet"/>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -42,7 +46,8 @@
         <div class="sidenav-header d-flex align-items-center justify-content-center">
           <!-- User Info-->
           <div class="sidenav-header-inner text-center"><!-- <img src="img2/avatar-7.jpg" alt="person" class="img-fluid rounded-circle"> -->
-            <h2 class="h5">Nathan Andrews</h2><span>Web Developer</span>
+          	
+            <h6 class="h6">Admin Technique : <%= session.getAttribute("id") %></h6><span></span>
           </div>
           <!-- Small Brand information, appears on minimized sidebar-->
           <div class="sidenav-header-logo"><a href="index.html" class="brand-small text-center"> <strong>B</strong><strong class="text-primary">D</strong></a></div>
@@ -53,11 +58,17 @@
           <ul id="side-main-menu" class="side-menu list-unstyled">
           	<li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Demandes  </a>
               <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
-                <li><a href="#">Demande Adaptee</a></li>
+                <li><a href="DemandeAdapteeServlet">Demande Adaptee</a></li>
                 <li><a href="DemandeMaintenanceServlet">Demande de Maintenance</a></li>
               </ul>
-            </li>                  
+            </li>        
+                    
             <li><a href="ChefDeProjetServlet"> <i class="icon-form"></i>Chefs de projet                              </a></li>
+             <li><a href="#exampledropdown1" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Produits  </a>
+              <ul id="exampledropdown1" class="collapse list-unstyled ">
+                <li><a href="#">Ajouter un nouveau produit</a></li>
+              </ul>
+            </li> 
           </ul>
         </div>
       </div>
@@ -129,7 +140,7 @@
                   </ul>
                 </li> -->
                 <!-- Log out-->
-                <li class="nav-item"><a href="login.html" class="nav-link logout"> <span class="d-none d-sm-inline-block">Logout</span><i class="fa fa-sign-out"></i></a></li>
+                <li class="nav-item"><a href="login.jsp" class="nav-link logout"> <span class="d-none d-sm-inline-block">Logout</span><i class="fa fa-sign-out"></i></a></li>
               </ul>
             </div>
           </div>
@@ -140,7 +151,7 @@
         <div class="container-fluid">
           <ul class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-            <li class="breadcrumb-item active">Chefs de projet      </li>
+            <li class="breadcrumb-item active">Chef de projet       </li>
           </ul>
         </div>
       </div>
@@ -148,92 +159,99 @@
         <div class="container-fluid">
           <!-- Page Header-->
           <header> 
-            <h1 class="h3 display">Chefs de projet           </h1>
+            <h1 class="h3 display">Chefs de projet          </h1>
           </header>
           <div class="row">
             <div class="col-lg-12">
               <div class="card">
                 <div class="card-header">
-                  <h4>La liste des Chefs de projet</h4>
+                  <h4>La liste des chefs de projet</h4>
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
                     <table class="table">
                       <thead>
                         <tr>
-                          <th>#</th>
-                          <th>Nom</th>
-                          <th>Prénom</th>
-                          <th>Action</th>
+                          <th style="text-align:center;">ID Chef de projet</th>
+                          <th style="text-align:center;">Prénom</th>
+                          <th style="text-align:center;">Nom</th>
+                          <th>Informations</th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
                           <c:forEach items="${chefsDeProjet}" var="row" >
 								  <tr>
-								  			
-								            <td><c:out value="${row.getId_chef_projet()}"/></td>
-								            <td><c:out value="${row.getNomCP()}"/></td>
-											<td><c:out value="${row.getPrenomCP()}"/></td>
-                          <!-- <th scope="row">1</th>
-                          <td>Mark</td>
-                          <td>Otto</td> -->
-                          <td>
-								                          <!-- Button trigger modal -->
-								<button style="margin-left:5px;" type="button" class="btn btn-secondary" data-toggle="modal" data-target="#i<c:out value="${row.getId_chef_projet()}"/>">
-								<i class="fa fa-id-card"></i></button>
-
-								<button margin-left: 5px; type="button" class="btn btn-success" >
-								  <i class="fa fa-paper-plane"></i>
-								</button>
-								<!-- Modal -->
-								<div class="modal fade" id="i<c:out value="${row.getId_chef_projet()}"/>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-								  aria-hidden="true">
-								  <div class="modal-dialog" role="document">
-								    <div class="modal-content">
-								      <div class="modal-header">
-								        <h5 class="modal-title" id="exampleModalLabel">Informations de la demande</h5>
-								        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-								          <span aria-hidden="true">&times;</span>
-								        </button>
-								      </div>
-								      <div class="modal-body">
-								      		*<c:out value="${row.getEmailCP()}"/><br>
-								            *<c:out value="${row.getCinCP()}"/><br>
-								            *<c:out value="${row.getAdresseCP()}"/><br>
-								            *<c:out value="${row.getNum_telephoneCP()}"/><br>
-									          <!-- 
-									          <table class="table table-hover"><thead>
-									            <tr>
-									              <th>#</th>
-									              <th>Sujet</th>
-									              <th>Description du problème</th>
-									              <th>Fichier joint</th>
-									              <th>Observations complémentaires</th>
-									            </tr>
-									          </thead>
-									          <tbody>
-									          <c:forEach items="${demandesMaintenance}" var="row" >
-								                    <tr>
-								                    
-								                    </tr>   
-								                </c:forEach>
-									          </tbody>
-									        </table>
-									           -->
-								        
-									        				          
-								      </div>
-								      <div class="modal-footer">
-								        <button type="button" class="btn btn-secondary" data-dismiss="modal">Sortir</button>
-								        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-								      </div>
-								    </div>
-								  </div>
-								</div>
-					    </td>
+								  			<td><input type="text" style="text-align:center;" size="2" id="inputDisabledEx2" value=<c:out value="${row.getId_chef_projet()}"/> class="form-control" disabled></td>
+								  			<td><input type="text" style="text-align:center;" size="2" id="inputDisabledEx2" value=<c:out value="${row.getPrenomCP()}"/> class="form-control" disabled></td>
+								  			<td><input type="text" style="text-align:center;" size="2" id="inputDisabledEx2" value=<c:out value="${row.getNomCP()}"/> class="form-control" disabled></td>
+                          					<td>
+												                          <!-- Button trigger modal -->
+												<button style="margin-left:5px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#i<c:out value="${row.getId_chef_projet()}"/>">
+												<i class="fa fa-id-card"></i></button>
+												
+											
+												
+											
+												
+												<!-- Modal -->
+												<div class="modal fade" id="i<c:out value="${row.getId_chef_projet()}"/>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+												  aria-hidden="true">
+												  <div class="modal-dialog" role="document">
+												  
+												    <form action="EnvoyerDemandeMaintenance" method="post" >
+												    <div class="modal-content">
+												    
+												      <div class="modal-header">
+												        <h5 class="modal-title" id="exampleModalLabel">Informations sur les chefs de projet</h5>
+												        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												          <span aria-hidden="true">&times;</span>
+												        </button>
+												      </div>
+												      <div class="modal-body">
+																
+																
+																<div class="col-sm-12">
+																	<div class="form-group">
+																		Email du chef de projet: <input type="text"  name="email" value=<c:out value="${row.getEmailCP()}"/> class="form-control" disabled><br>
+																	</div>
+																</div> 
+																
+																<div class="col-sm-12">
+																	<div class="form-group">
+																		Github du chef de projet: <input type="text"  name="github" value=<c:out value="${row.getGithubCP()}"/> class="form-control" disabled><br>
+																	</div>
+																</div> 
+																
+																<div class="col-sm-12">
+																	<div class="form-group">
+																		Adresse du chef de projet: <input type="text"  name="address" value=<c:out value="${row.getAdresseCP()}"/> class="form-control" disabled><br>
+																	</div>
+																</div> 
+																
+																<div class="col-sm-12">
+																	<div class="form-group">
+																		Téléphone du chef de projet: <input type="text"  name="tel" value=<c:out value="${row.getNum_telephoneCP()}"/> class="form-control" disabled><br>
+																	</div>
+																</div>
+																
+																 
+																
+																<div class="modal-footer">
+																        <button type="button" class="btn btn-secondary" data-dismiss="modal">Sortir</button>
+													           </div>          
+												      </div>
+												      
+												    </div>
+												    </form>
+												  </div>
+												  
+												</div>
+					                    </td>
+					                    
 					    	  </tr>   
 						  </c:forEach>
+
                       </tr>
                       </tbody>
                     </table>
@@ -269,5 +287,6 @@
     <script src="vendor2/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
     <!-- Main File-->
     <script src="js2/front.js"></script>
+
   </body>
 </html>

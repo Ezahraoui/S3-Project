@@ -59,12 +59,12 @@ pageEncoding="UTF-8"%>
 										class="fa fa-envelope"></i></a></li>
 							</ul>
 							<div class="login">
-								<a href="login.jsp"
+								<a href="logout.jsp"
 									class="login-btn"><i class="fa fa-sign-in"></i><span
-									class="d-none d-md-inline-block">Se connecter</span></a><a
-									href="register.jsp" class="signup-btn"><i
+									class="d-none d-md-inline-block">Se déconnecter</span></a>
+									<!-- <a href="register.jsp" class="signup-btn"><i
 									class="fa fa-user"></i><span class="d-none d-md-inline-block">Créer
-										un nouveau compte</span></a>
+										un nouveau compte</span></a> -->
 							</div>
 							<ul class="social-custom list-inline">
 								<li class="list-inline-item"><a href="#"><i
@@ -161,6 +161,9 @@ pageEncoding="UTF-8"%>
 									class="nav-link">Demande de maintenance</a></li>
 								<li class="dropdown-item"><a href="demandeAdaptee.jsp"
 									class="nav-link">Demande adaptée</a></li>
+									
+									<li class="dropdown-item"><a href="ListeDemandesClient"
+									class="nav-link">Mes demandes de maintenance</a></li>
 							</ul></li>
 					</ul>
 				</div>

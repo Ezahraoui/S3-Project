@@ -7,6 +7,7 @@ public class AdministrateurTechnique {
     private String emailAT;
     private String passwordAT;
     private String cinAT;
+    private String githubAT;
     private String adresseAT;
     private String num_telephoneAT;
     
@@ -29,6 +30,7 @@ public class AdministrateurTechnique {
 	}
 	public void setPrenomAT(String prenomAT) {
 		this.prenomAT = prenomAT;
+		
 	}
 	public String getEmailAT() {
 		return emailAT;
@@ -44,6 +46,13 @@ public class AdministrateurTechnique {
 	}
 	public String getCinAT() {
 		return cinAT;
+	}
+	
+	public String getGithubAT() {
+		return githubAT;
+	}
+	public void setGithubAT(String githubAT) {
+		this.githubAT = githubAT;
 	}
 	public void setCinAT(String cinAT) {
 		this.cinAT = cinAT;

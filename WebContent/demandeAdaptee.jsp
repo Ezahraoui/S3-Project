@@ -1,3 +1,4 @@
+<%@page import="bean.Client"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -58,10 +59,12 @@ pageEncoding="UTF-8"%>
 										class="fa fa-envelope"></i></a></li>
 							</ul>
 							<div class="login">
-								<a href="login.jsp" class="login-btn"><i class="fa fa-sign-in"></i><span
-									class="d-none d-md-inline-block">Se connecter</span></a>
-									<a href="register.jsp" class="signup-btn"><i class="fa fa-user"></i><span class="d-none d-md-inline-block">Créer
-										un nouveau compte</span></a>
+								<a href="logout.jsp"
+									class="login-btn"><i class="fa fa-sign-in"></i><span
+									class="d-none d-md-inline-block">Se déconnecter</span></a>
+									<!-- <a href="register.jsp" class="signup-btn"><i
+									class="fa fa-user"></i><span class="d-none d-md-inline-block">Créer
+										un nouveau compte</span></a> -->
 							</div>
 							<ul class="social-custom list-inline">
 								<li class="list-inline-item"><a href="#"><i
@@ -158,6 +161,8 @@ pageEncoding="UTF-8"%>
 									class="nav-link">Demande de maintenance</a></li>
 								<li class="dropdown-item"><a href="demandeAdaptee.jsp"
 									class="nav-link">Demande adaptée</a></li>
+									<li class="dropdown-item"><a href="listeDemandesClient.jsp"
+									class="nav-link">Mes demandes de maintenance</a></li>
 							</ul></li>
 					</ul>
 				</div>
@@ -216,9 +221,9 @@ pageEncoding="UTF-8"%>
 						</div>
 					</div>
 					<div class="col-md-8 mx-auto">
-						<form action="demandeAdapteeServlet" method="post" enctype="multipart/form-data">
+						<form action="DemandeAdapteeServlet" method="post" enctype="multipart/form-data">
 							<div class="row">
-								
+							   ID: <input type="text" id="inputDisabledEx2" name="id" value="<%= session.getAttribute("id") %>" class="form-control" disabled>
 								<div class="col-sm-12">
 									<div class="form-group">
 										<label for="subject">Sujet</label> <input id="subject"
@@ -227,8 +232,8 @@ pageEncoding="UTF-8"%>
 								</div>
 								<div class="col-sm-12">
 									<div class="form-group">
-										<label for="message">Message</label>
-										<textarea id="message" type="text" name="message" class="form-control"></textarea>
+										<label for="description">Description du problème</label>
+										<textarea id="description" type="text" name="description" class="form-control"></textarea>
 									</div>
 								</div>
 								<div class="col-sm-12">
@@ -239,8 +244,8 @@ pageEncoding="UTF-8"%>
 								</div>
 								<div class="col-sm-12">
 									<div class="form-group">
-										<label for="cpf">Votre capacité financière</label> <input id="cpf"
-											type="text" name="cpf" class="form-control">
+										<label for="capaciteFinancement">Votre capacité de financement</label> <input id="capaciteFinancement"
+											type="text" name="capaciteFinancement" class="form-control">
 									</div>
 								</div>
 								<div class="col-sm-12 text-center">

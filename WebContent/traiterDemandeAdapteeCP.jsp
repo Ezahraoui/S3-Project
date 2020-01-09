@@ -1,5 +1,9 @@
+<%@page import="bean.ChefDeProjet"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
 <%@page import="java.sql.*"%>
+<%@ page import="java.util.ArrayList"%>
+<jsp:useBean id="cpr" class="bean.ChefDeProjet"/>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -42,7 +46,7 @@
         <div class="sidenav-header d-flex align-items-center justify-content-center">
           <!-- User Info-->
           <div class="sidenav-header-inner text-center"><!-- <img src="img2/avatar-7.jpg" alt="person" class="img-fluid rounded-circle"> -->
-            <h2 class="h5">Nathan Andrews</h2><span>Web Developer</span>
+            <h6 class="h6">Chef de Projet : <%= session.getAttribute("id") %></h6><span></span>
           </div>
           <!-- Small Brand information, appears on minimized sidebar-->
           <div class="sidenav-header-logo"><a href="index.html" class="brand-small text-center"> <strong>B</strong><strong class="text-primary">D</strong></a></div>
@@ -50,8 +54,13 @@
         <!-- Sidebar Navigation Menus-->
        <div class="main-menu">
           <h5 class="sidenav-heading">Main</h5>
-          <ul id="side-main-menu" class="side-menu list-unstyled">                
-            <li><a href="ClientServlet"> <i class="icon-form"></i>Clients                              </a></li>
+          <ul id="side-main-menu" class="side-menu list-unstyled">
+          	<li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Demandes  </a>
+              <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
+                <li><a href="TraiterDemandeAdaptee">Demande Adaptee</a></li>
+                <li><a href="TraiterDemandeMaintenance">Demande de Maintenance</a></li>
+              </ul>
+            </li>                  
           </ul>
         </div>
       </div>
@@ -123,7 +132,7 @@
                   </ul>
                 </li> -->
                 <!-- Log out-->
-                <li class="nav-item"><a href="login.html" class="nav-link logout"> <span class="d-none d-sm-inline-block">Logout</span><i class="fa fa-sign-out"></i></a></li>
+                <li class="nav-item"><a href="login.jsp" class="nav-link logout"> <span class="d-none d-sm-inline-block">Logout</span><i class="fa fa-sign-out"></i></a></li>
               </ul>
             </div>
           </div>
@@ -134,7 +143,7 @@
         <div class="container-fluid">
           <ul class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-            <li class="breadcrumb-item active">Chefs de projet      </li>
+            <li class="breadcrumb-item active">Demandes       </li>
           </ul>
         </div>
       </div>
@@ -142,92 +151,116 @@
         <div class="container-fluid">
           <!-- Page Header-->
           <header> 
-            <h1 class="h3 display">Clients           </h1>
+            <h1 class="h3 display">Demandes           </h1>
           </header>
           <div class="row">
             <div class="col-lg-12">
               <div class="card">
                 <div class="card-header">
-                  <h4>La liste des Clients</h4>
+                  <h4>La liste des demandes</h4>
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
                     <table class="table">
                       <thead>
                         <tr>
-                          <th>#</th>
-                          <th>Nom</th>
-                          <th>Prénom</th>
+                          <th style="text-align:center;">ID</th>
+                          <th style="text-align:center;">Sujet</th>
                           <th>Action</th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
-                          <c:forEach items="${clients}" var="row" >
+                          <c:forEach items="${demandesAdaptee}" var="row" >
 								  <tr>
-								  			
-								            <td><c:out value="${row.getId_client()}"/></td>
-								            <td><c:out value="${row.getNomCLT()}"/></td>
-											<td><c:out value="${row.getPrenomCLT()}"/></td>
-                          <!-- <th scope="row">1</th>
-                          <td>Mark</td>
-                          <td>Otto</td> -->
-                          <td>
-								                          <!-- Button trigger modal -->
-								<button style="margin-left:5px;" type="button" class="btn btn-secondary" data-toggle="modal" data-target="#i<c:out value="${row.getId_client()}"/>">
-								<i class="fa fa-id-card"></i></button>
+								  			<td><input type="text" style="text-align:center;" size="2" id="inputDisabledEx2" value=<c:out value="${row.getId_demande_adaptee()}"/> class="form-control" disabled></td>
+								  			<td><input type="text" id="inputDisabledEx2" name="id6" value=<c:out value="${row.getSujet()}"/> class="form-control" disabled></td>
+								            
+                          					<td>
+												<!-- Button trigger modal -->
+												<button style="margin-left:5px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#i<c:out value="${row.getId_demande_adaptee()}"/>">
+												<i class="fa fa-id-card"></i></button>
+												
+												<!-- Modal -->
+												<div class="modal fade" id="i<c:out value="${row.getId_demande_adaptee()}"/>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+												  aria-hidden="true">
+												  <div class="modal-dialog" role="document">
+												  
+												    <form action="TraiterDemandeAdaptee" method="post" >
+												    <div class="modal-content">
+												    
+												      <div class="modal-header">
+												        <h5 class="modal-title" id="exampleModalLabel">Informations de la demande</h5>
+												        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												          <span aria-hidden="true">&times;</span>
+												        </button>
+												      </div>
+												      <div class="modal-body">
+												      			<div class="col-sm-12">
+																	<div class="form-group">
+																		ID de la demande : <input type="text" name="id3" value=<c:out value="${row.getId_demande_adaptee()}"/> class="form-control">
+																	</div>
+																</div> 
+												      		
+																<div class="col-sm-12">
+																	<div class="form-group">
+																		ID du client : <input type="text"  name="id" value=<c:out value="${row.getClient().getId_client()}"/> class="form-control" disabled>
+																	</div>
+																</div> 
+																
+																<div class="col-sm-12">
+																	<div class="form-group">
+																		Nom du client : <input type="text" name="nom" value=<c:out value="${row.getClient().getNomCLT()}"/> class="form-control" disabled><br>
+																	</div>
+																</div> 
+													      		
+													      		<div class="col-sm-12">
+																	<div class="form-group">
+																		Prénom du client : <input type="text"  name="prenom" value=<c:out value="${row.getClient().getPrenomCLT()}"/> class="form-control" disabled><br>
+																	</div>
+																</div> 
+																
+																<div class="col-sm-12">
+																	<div class="form-group">
+																		Description de la demande : <input type="text"  name="description" value=<c:out value="${row.getDescription()}"/> class="form-control" disabled><br>
+																	</div>
+																</div> 
+																
+																
+																
+																<div class="col-sm-12">
+																	<div class="form-group">
+																	Observations : <input type="text" name="capaciteFinancement" value=<c:out value="${row.getCapaciteFinancement()}"/> class="form-control" disabled><br>
+																	</div>
+																</div>
+													      		
+													      		<div class="col-sm-12">
+																	<div class="form-group">
+																		Consulter le document : <a type="file" name="file" class="form-control" href="downloadAttachment1?id=${row.getId_demande_adaptee()}">Cliquer ici pour télecharger le cahier des charges</a><br>
+																	</div>		 
+																</div>
 
-								<button margin-left: 5px; type="button" class="btn btn-success" >
-								  <i class="fa fa-paper-plane"></i>
-								</button>
-								<!-- Modal -->
-								<div class="modal fade" id="i<c:out value="${row.getId_client()}"/>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-								  aria-hidden="true">
-								  <div class="modal-dialog" role="document">
-								    <div class="modal-content">
-								      <div class="modal-header">
-								        <h5 class="modal-title" id="exampleModalLabel">Informations de la demande</h5>
-								        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-								          <span aria-hidden="true">&times;</span>
-								        </button>
-								      </div>
-								      <div class="modal-body">
-								      		*<c:out value="${row.getEmailCLT()}"/><br>
-								            *<c:out value="${row.getCinCLT()}"/><br>
-								            *<c:out value="${row.getAdresseCLT()}"/><br>
-								            *<c:out value="${row.getNum_telephoneCLT()}"/><br>
-									          <!-- 
-									          <table class="table table-hover"><thead>
-									            <tr>
-									              <th>#</th>
-									              <th>Sujet</th>
-									              <th>Description du problème</th>
-									              <th>Fichier joint</th>
-									              <th>Observations complémentaires</th>
-									            </tr>
-									          </thead>
-									          <tbody>
-									          <c:forEach items="${demandesMaintenance}" var="row" >
-								                    <tr>
-								                    
-								                    </tr>   
-								                </c:forEach>
-									          </tbody>
-									        </table>
-									           -->
-								        
-									        				          
-								      </div>
-								      <div class="modal-footer">
-								        <button type="button" class="btn btn-secondary" data-dismiss="modal">Sortir</button>
-								        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-								      </div>
-								    </div>
-								  </div>
-								</div>
-					    </td>
+																 
+																
+																<div class="modal-footer">
+																        <a class="form-control" style="color:green" href="AccepterRefuserDemandeAdaptee?id=${row.getId_demande_adaptee()}&type=a">Accepter la demande</a>
+																        <a class="form-control" style="color:red" href="AccepterRefuserDemandeAdaptee?id=${row.getId_demande_adaptee()}&type=r">Refuser la demande</a>
+																        <button type="button" class="btn btn-secondary" data-dismiss="modal">Sortir</button>
+													           </div>
+												      	
+												      		<!-- <c:out value="${row.getDocument_joindre()}"/><br> -->	          
+												      </div>
+												      
+												    </div>
+												    </form>
+												  </div>
+												  
+												</div>
+					                    </td>
+					                    
 					    	  </tr>   
 						  </c:forEach>
+
                       </tr>
                       </tbody>
                     </table>
@@ -263,5 +296,6 @@
     <script src="vendor2/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
     <!-- Main File-->
     <script src="js2/front.js"></script>
+
   </body>
 </html>

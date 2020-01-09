@@ -9,6 +9,7 @@ public class Client {
     private String emailCLT;
     private String passwordCLT;
     private String cinCLT;
+    private String githubCLT;
     private String adresseCLT;
     private String num_telephoneCLT;
     private Set<DemandeAdaptee> demande_adapteeCLT;
@@ -49,6 +50,12 @@ public class Client {
 	}
 	public void setCinCLT(String cinCLT) {
 		this.cinCLT = cinCLT;
+	}
+	public String getGithubCLT() {
+		return githubCLT;
+	}
+	public void setGithubCLT(String githubCLT) {
+		this.githubCLT = githubCLT;
 	}
 	public String getAdresseCLT() {
 		return adresseCLT;

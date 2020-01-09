@@ -2,6 +2,7 @@ package controller;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -15,10 +16,12 @@ import bean.Administrateur;
 import bean.AdministrateurTechnique;
 import bean.ChefDeProjet;
 import bean.Client;
+import bean.DemandeMaintenance;
 import dao.AdministrateurDAO;
 import dao.AdministrateurTechniqueDAO;
 import dao.ChefDeProjetDAO;
 import dao.ClientDAO;
+import dao.DemandeMaintenanceDAO;
 
 /**
  * Servlet implementation class Login
@@ -39,8 +42,7 @@ public class Login extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+
 	}
 
 	/**
@@ -53,12 +55,12 @@ public class Login extends HttpServlet {
         ClientDAO clientDAO = new ClientDAO();
         ChefDeProjetDAO chefDeProjetDAO = new ChefDeProjetDAO();
         AdministrateurTechniqueDAO administrateurTechniqueDAO = new AdministrateurTechniqueDAO();
-        AdministrateurDAO administrateurDAO = new AdministrateurDAO();
+        //AdministrateurDAO administrateurDAO = new AdministrateurDAO();
         try {
             Client client = clientDAO.authentification(email, password);
             ChefDeProjet chefDeProjet = chefDeProjetDAO.authentification(email, password);
             AdministrateurTechnique administrateurTechnique = administrateurTechniqueDAO.authentification(email, password);
-            Administrateur administrateur = administrateurDAO.authentification(email, password);
+            //Administrateur administrateur = administrateurDAO.authentification(email, password);
             String destPage = "login.jsp";
              
             if (client != null) {
@@ -70,17 +72,17 @@ public class Login extends HttpServlet {
             	HttpSession session = request.getSession();
                 session.setAttribute("chefDeProjet", chefDeProjet);
                 session.setAttribute("id",chefDeProjet.getId_chef_projet());
-                destPage = "loginsuccess.jsp";
+                destPage = "acceuilChefProjet.jsp";
             } else if(administrateurTechnique != null) {
             	HttpSession session = request.getSession();
                 session.setAttribute("administrateurTechnique", administrateurTechnique);
                 session.setAttribute("id",administrateurTechnique.getId_admin_technique());
-                destPage = "loginsuccess.jsp";
-            } else if(administrateur != null) {
+                destPage = "acceuilAdminTechnique.jsp";
+            /*} else if(administrateur != null) {
             	HttpSession session = request.getSession();
                 session.setAttribute("administrateur", administrateur);
                 session.setAttribute("id",administrateur.getId_admin());
-                destPage = "loginsuccess.jsp";
+                destPage = "loginsuccess.jsp";*/
             }
             else {
                 String message = "Invalid email/password";
