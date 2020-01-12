@@ -207,11 +207,19 @@
 								</div>
 								<div class="col-sm-12">
 									<div class="form-group">
-										<label>Entrer le logiciel sous format ZIP ou .EXE</label>
-									    <input type="file" name="file" class="form-control"/>
+										<label for="description">Description du logiciel</label>
+										<textarea id="description" type="text" name="description" class="form-control"></textarea></br>
 									</div>
-										 
 								</div>
+								<div class="custom-file mb-3">
+							      <input type="file" class="custom-file-input" id="image" name="image">
+							      <label class="custom-file-label" for="customFile">Image</label>
+							    </div>
+								<div class="custom-file mb-3">
+							      <input type="file" class="custom-file-input" id="file" name="file">
+							      <label class="custom-file-label" for="customFile">Entrez le logiciel sous format ZIP</label>
+							    </div>
+								
 		
 								<div class="col-sm-12 text-center">
 									<button type="submit" class="btn btn-template-outlined">
@@ -309,6 +317,13 @@
     <script src="js/front.js"></script>
     <!-- Main File-->
     <script src="js2/front.js"></script>
-
+	<script>
+// Add the following code if you want the name of the file appear on select
+$(".custom-file-input").on("change", function() {
+  var fileName = $(this).val().split("\\").pop();
+  $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+});
+</script>
+	
   </body>
 </html>

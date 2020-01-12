@@ -174,19 +174,63 @@
                         <tr>
                           <th style="text-align:center;">ID</th>
                           <th style="text-align:center;">Nom</th>
+                          <th style="text-align:center;">Description</th>
                           <th style="text-align:center;">Prix</th>
-                          <th style="text-align:center;">Documentation</th>
+                          <th style="text-align:center;">Image</th>
+                          <th style="text-align:center;">Logiciel et licence</th>
+                     	
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
                           <c:forEach items="${produits}" var="row" >
+            
 								  <tr>
 								  			<td><input type="text" style="text-align:center;" size="2" id="inputDisabledEx2" value=<c:out value="${row.getId_produit()}"/> class="form-control" disabled></td>
-								  			<td><input type="text" id="inputDisabledEx2" name="id6" value=<c:out value="${row.getNom()}"/> class="form-control" disabled></td>
+								  			<td><input type="text" id="inputDisabledEx2" size="2" name="id6" value=<c:out value="${row.getNom()}"/> class="form-control" disabled></td>
+								  								<td>
+												                          <!-- Button trigger modal -->
+												<button style="margin-left:5px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#i<c:out value="${row.getId_produit()}"/>">
+												<i class="fa fa-id-card"></i></button>
+												<!-- Modal -->
+												<div class="modal fade" id="i<c:out value="${row.getId_produit()}"/>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+												  aria-hidden="true">
+												  <div class="modal-dialog" role="document">
+												  
+												    <form>
+												    <div class="modal-content">
+												    
+												      <div class="modal-header">
+												        <h5 class="modal-title" id="exampleModalLabel">Informations sur logiciel</h5>
+												        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												          <span aria-hidden="true">&times;</span>
+												        </button>
+												      </div>
+												      <div class="modal-body">
+										
+																<div class="col-sm-12">
+																	<div class="form-group">
+																		Description du logiciel : <input type="text"  name="description" value=<c:out value="${row.getDescription()}"/> class="form-control" disabled><br>
+																	</div>
+																</div> 
+																<div class="modal-footer">
+																        <button type="button" class="btn btn-secondary" data-dismiss="modal">Sortir</button>
+													           </div>	          
+												      </div>
+												      
+												    </div>
+												    </form>
+												  </div>
+												  
+												</div>
+					                    </td>
 								  			<td><input type="text" id="inputDisabledEx2" name="id6" value=<c:out value="${row.getPrix()}"/> class="form-control" disabled></td>
-								  			<td><a type="file" name="file" class="form-control" href="downloadAttachment2?id=${row.getId_produit()}">Cliquer ici pour télecharger le produit</a></td>       
+								  			<td><a type="file" name="file" class="form-control" href="ViewImageSoft?id=${row.getId_produit()}">Cliquer ici pour voir image</a></td>
+								  			<td><a type="file" name="file" class="form-control" href="downloadAttachment2?id=${row.getId_produit()}">Cliquer ici pour télecharger le produit</a></td>
+								  			
+								  			
 					    	  </tr>   
+
 						  </c:forEach>
 
                       </tr>

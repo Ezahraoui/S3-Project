@@ -6,9 +6,9 @@ public class Commande {
 	private Long id_commande; 
 	private Date date_commande;
 	private Date date_livraison;
-	private Panier panier;
-	
-	
+	private int etat;
+	private Produit produit;
+	private Client client;
 	
 	public Long getId_commande() {
 		return id_commande;
@@ -16,13 +16,6 @@ public class Commande {
 	public void setId_commande(Long id_commande) {
 		this.id_commande = id_commande;
 	}
-	public Panier getPanier() {
-		return panier;
-	}
-	public void setPanier(Panier panier) {
-		this.panier = panier;
-	}
-	
 	public Date getDate_commande() {
 		return date_commande;
 	}
@@ -34,6 +27,25 @@ public class Commande {
 	}
 	public void setDate_livraison(Date date_livraison) {
 		this.date_livraison = date_livraison;
+	}
+	public int getEtat() {
+		return etat;
+	}
+	public void setEtat(int etat) {
+		this.etat = etat;
+	}
+	
+	public Produit getProduit() {
+		return produit;
+	}
+	public void setProduit(Produit produit) {
+		this.produit = produit;
+	}
+	public Client getClient() {
+		return client;
+	}
+	public void setClient(Client client) {
+		this.client = client;
 	}
 	public Commande() {
 		super();

@@ -144,7 +144,7 @@ pageEncoding="UTF-8"%>
 							href="javascript: void(0)" data-toggle="dropdown"
 							class="dropdown-toggle">Home <b class="caret"></b></a>
 							<ul class="dropdown-menu">
-								<li class="dropdown-item"><a href="index.html"
+								<li class="dropdown-item"><a href="listeProduitsClients"
 									class="nav-link">Option 1: Default Page</a></li>
 								<li class="dropdown-item"><a href="index2.html"
 									class="nav-link">Option 2: Application</a></li>
@@ -161,9 +161,17 @@ pageEncoding="UTF-8"%>
 									class="nav-link">Demande de maintenance</a></li>
 								<li class="dropdown-item"><a href="demandeAdaptee.jsp"
 									class="nav-link">Demande adaptée</a></li>
-									
 									<li class="dropdown-item"><a href="ListeDemandesClient"
 									class="nav-link">Mes demandes de maintenance</a></li>
+							</ul></li>
+							<li class="nav-item dropdown"><a href="javascript: void(0)"
+							data-toggle="dropdown" class="dropdown-toggle">Softwares <b
+								class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li class="dropdown-item"><a href="ListeProduitsClient"
+									class="nav-link">Les logiciels</a></li>
+								<li class="dropdown-item"><a href="ListeCommandesClient"
+									class="nav-link">Mes commandes</a></li>
 							</ul></li>
 					</ul>
 				</div>
@@ -237,12 +245,17 @@ pageEncoding="UTF-8"%>
 										<textarea id="description" type="text" name="description" class="form-control"></textarea>
 									</div>
 								</div>
-								<div class="col-sm-12">
+								<div class="custom-file mb-3">
+							      <input type="file" class="custom-file-input" id="file" name="file">
+							      <label class="custom-file-label" for="customFile">Choose file</label>
+							    </div>
+								<!-- <div class="col-sm-12">
 									<div class="form-group">
 									    <input type="file" name="file" class="form-control"/>
 									</div>
 										 
-								</div>
+								</div> -->
+								
 								<div class="col-sm-12">
 									<div class="form-group">
 										<label for="observation_complementaire">Observations complémentaires</label> <input id="observation_complementaire"
@@ -348,5 +361,12 @@ pageEncoding="UTF-8"%>
     <script src="js/gmaps.js"></script>
     <script src="js/gmaps.init.js"></script>
     <script src="js/front.js"></script>
+    <script>
+// Add the following code if you want the name of the file appear on select
+$(".custom-file-input").on("change", function() {
+  var fileName = $(this).val().split("\\").pop();
+  $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+});
+</script>
   </body>
 </html>

@@ -67,6 +67,7 @@ public class AjouterLogicielServlet extends HttpServlet {
 		//long id = (long) session.getAttribute("id");
 
         String nom = request.getParameter("nom");
+        String description = request.getParameter("description");
         String prix = request.getParameter("prix");
         System.out.println(nom);
         
@@ -79,12 +80,23 @@ public class AjouterLogicielServlet extends HttpServlet {
             inputStream = filePart.getInputStream();
         }
         
+        InputStream inputStream1 = null;
+        Part image = request.getPart("image");
+        if (image != null) 
+        {
+            System.out.println(image.getName());
+            System.out.println(image.getSize());
+            System.out.println(image.getContentType());
+            inputStream1 = image.getInputStream();
+        }
+        
         Produit produit = new Produit();
         produit.setNom(nom);
         produit.setPrix(Double.parseDouble(prix));
+        produit.setDescription(description);
 
         
-        ProduitDAO.save(produit, inputStream);
+        ProduitDAO.save(produit, inputStream, inputStream1);
         request.getRequestDispatcher("ajouterLogiciel.jsp").include(request,response);
 	}
 

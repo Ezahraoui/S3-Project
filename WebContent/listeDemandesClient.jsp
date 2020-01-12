@@ -146,7 +146,7 @@ pageEncoding="UTF-8"%>
 							href="javascript: void(0)" data-toggle="dropdown"
 							class="dropdown-toggle">Home <b class="caret"></b></a>
 							<ul class="dropdown-menu">
-								<li class="dropdown-item"><a href="index.html"
+								<li class="dropdown-item"><a href="listeProduitsClients"
 									class="nav-link">Option 1: Default Page</a></li>
 								<li class="dropdown-item"><a href="index2.html"
 									class="nav-link">Option 2: Application</a></li>
@@ -163,8 +163,17 @@ pageEncoding="UTF-8"%>
 									class="nav-link">Demande de maintenance</a></li>
 								<li class="dropdown-item"><a href="demandeAdaptee.jsp"
 									class="nav-link">Demande adaptée</a></li>
-									<li class="dropdown-item"><a href="listeDemandesClient.jsp"
+									<li class="dropdown-item"><a href="ListeDemandesClient"
 									class="nav-link">Mes demandes de maintenance</a></li>
+							</ul></li>
+							<li class="nav-item dropdown"><a href="javascript: void(0)"
+							data-toggle="dropdown" class="dropdown-toggle">Softwares <b
+								class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li class="dropdown-item"><a href="ListeProduitsClient"
+									class="nav-link">Les logiciels</a></li>
+								<li class="dropdown-item"><a href="ListeCommandesClient"
+									class="nav-link">Mes commandes</a></li>
 							</ul></li>
 					</ul>
 				</div>
@@ -325,9 +334,12 @@ pageEncoding="UTF-8"%>
 					                    </td>
 					                    
 					                    <td style="text-align:center;"><c:choose>
-											   <c:when test="${row.getEtat()==0}"><div class="alert alert-primary" role="alert">
-  													Demande en cours de traitement
-												</div>
+											   <c:when test="${row.getEtat()==0}">
+											   		<div class="alert alert-primary" role="alert">
+  														Demande en cours de traitement
+  														
+													</div>
+													
 												</c:when>
 											   <c:when test="${row.getEtat()==1}"><div class="alert alert-success" role="alert">
   														Demande acceptée
