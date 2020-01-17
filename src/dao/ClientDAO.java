@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import bean.Client;
+import bean.DemandeMaintenance;
+import bean.Produit;
 
 public class ClientDAO {
 	public static Connection getConnection(){
@@ -110,4 +112,47 @@ public class ClientDAO {
 	    } catch(Exception e){}
 	    return null;
 	}
+	
+	public static int update(Client c){
+        int status=0;
+        try{
+            Connection conn = DemandeMaintenanceDAO.getConnection();
+            PreparedStatement ps = conn.prepareStatement("update client set NOM=?, PRENOM=?, EMAIL=?, PASSWORD=?, CIN=?, ADRESSE=?, NUM_TELEPHONE=? where client.ID_CLIENT = ?");
+            ps.setString(1, c.getNomCLT());
+            ps.setString(2, c.getPrenomCLT());
+            ps.setString(3, c.getEmailCLT());
+            ps.setString(4, c.getPasswordCLT());
+            ps.setString(5, c.getCinCLT());
+            ps.setString(6, c.getAdresseCLT());
+            ps.setString(7, c.getNum_telephoneCLT());
+            ps.setLong(8, c.getId_client());
+            status = ps.executeUpdate();
+            conn.close();}
+            catch(Exception e){System.out.println(e);}
+            return status;
+    }
+	
+	public static List<Client> getAll2(Long id){
+        List<Client> clients = new ArrayList<Client>();
+        try{
+            Connection conn = ClientDAO.getConnection();
+            PreparedStatement ps = conn.prepareStatement("SELECT *FROM client where client.ID_CLIENT = ?");
+            ps.setLong(1, id);
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+            	Client c = new Client();
+            	c.setId_client((rs.getLong(1)));
+            	c.setNomCLT(rs.getString(2));
+            	c.setPrenomCLT(rs.getString(3));
+            	c.setEmailCLT(rs.getString(4));
+            	c.setPasswordCLT(rs.getString(5));
+            	c.setCinCLT(rs.getString(6));
+            	c.setAdresseCLT(rs.getString(7));
+            	c.setNum_telephoneCLT(rs.getString(8));
+            	clients.add(c);
+            }
+        return clients;
+        } catch(Exception e){}
+        return null;
+}
 }

@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import bean.ChefDeProjet;
+import bean.Client;
 
 
 public class ChefDeProjetDAO {
@@ -108,6 +109,24 @@ public class ChefDeProjetDAO {
         }
     }
 	
+	public static int update(ChefDeProjet cp){
+        int status=0;
+        try{
+            Connection conn = DemandeMaintenanceDAO.getConnection();
+            PreparedStatement ps = conn.prepareStatement("update chef_de_projet set NOM=?, PRENOM=?, EMAIL=?, PASSWORD=?, CIN=?, ADRESSE=?, NUM_TELEPHONE=? where client.ID_CLIENT = ?");
+            ps.setString(1, cp.getNomCP());
+            ps.setString(2, cp.getPrenomCP());
+            ps.setString(3, cp.getEmailCP());
+            ps.setString(4, cp.getPasswordCP());
+            ps.setString(5, cp.getGithubCP());
+            ps.setString(6, cp.getAdresseCP());
+            ps.setString(7, cp.getNum_telephoneCP());
+            ps.setLong(8, cp.getId_chef_projet());
+            status = ps.executeUpdate();
+            conn.close();}
+            catch(Exception e){System.out.println(e);}
+            return status;
+    }
 	
 	public static List<ChefDeProjet> getAll(){
         List<ChefDeProjet> chefsDeProjet = new ArrayList<ChefDeProjet>();
@@ -118,6 +137,29 @@ public class ChefDeProjetDAO {
             while(rs.next()){
             	ChefDeProjet cp = new ChefDeProjet();
             	cp.setId_chef_projet(rs.getLong(1));
+            	cp.setNomCP(rs.getString(2));
+            	cp.setPrenomCP(rs.getString(3));
+            	cp.setEmailCP(rs.getString(4));
+            	cp.setPasswordCP(rs.getString(5));
+            	cp.setGithubCP(rs.getString(6));
+            	cp.setAdresseCP(rs.getString(7));
+            	cp.setNum_telephoneCP(rs.getString(8));
+            	chefsDeProjet.add(cp);
+            }
+        return chefsDeProjet;
+        } catch(Exception e){}
+        return null;
+}
+	public static List<ChefDeProjet> getAll2(Long id){
+		List<ChefDeProjet> chefsDeProjet = new ArrayList<ChefDeProjet>();
+        try{
+            Connection conn = ChefDeProjetDAO.getConnection();
+            PreparedStatement ps = conn.prepareStatement("SELECT *FROM chef_de_projet where chef_de_projet.ID_CHEF_PROJET= ?");
+            ps.setLong(1, id);
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+            	ChefDeProjet cp = new ChefDeProjet();
+            	cp.setId_chef_projet((rs.getLong(1)));
             	cp.setNomCP(rs.getString(2));
             	cp.setPrenomCP(rs.getString(3));
             	cp.setEmailCP(rs.getString(4));

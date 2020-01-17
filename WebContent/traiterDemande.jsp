@@ -11,7 +11,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Bootstrap Dashboard by Bootstrapious.com</title>
+    <title>Session Administrateur</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
@@ -33,7 +33,7 @@
     <link rel="stylesheet" href="css2/custom.css">
 	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <!-- Favicon-->
-    <link rel="shortcut icon" href="img2/favicon.ico">
+    <link rel="shortcut icon" href="img1/Ecommerce Plateform.png">
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
@@ -56,6 +56,8 @@
        <div class="main-menu">
           <h5 class="sidenav-heading">Main</h5>
           <ul id="side-main-menu" class="side-menu list-unstyled">
+          	<li><a href="acceuilAdminTechnique.jsp" aria-expanded="false"> <i class="icon-interface-windows"></i>Home  </a>
+            </li>
           	<li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Demandes  </a>
               <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
                 <li><a href="DemandeAdapteeServlet">Demande Adaptee</a></li>
@@ -66,9 +68,11 @@
             <li><a href="ChefDeProjetServlet"> <i class="icon-form"></i>Chefs de projet                              </a></li>
              <li><a href="#exampledropdown1" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Produits  </a>
               <ul id="exampledropdown1" class="collapse list-unstyled ">
-                 <li><a href="ajouterLogiciel.jsp">Ajouter un nouveau produit</a></li>
+                <li><a href="ajouterLogiciel.jsp">Ajouter un nouveau produit</a></li>
+                <li><a href="AjouterLogicielServlet">Liste des logiciels</a></li>
               </ul>
             </li> 
+            <li><a href="ListeCommandes"> <i class="icon-form"></i>Commandes                              </a></li>
           </ul>
         </div>
       </div>
@@ -159,7 +163,7 @@
         <div class="container-fluid">
           <!-- Page Header-->
           <header> 
-            <h1 class="h3 display">Demandes           </h1>
+            <h1 class="h3 display">Demandes de maintenance          </h1>
           </header>
           <div class="row">
             <div class="col-lg-12">
@@ -174,19 +178,15 @@
                         <tr>
                           <th style="text-align:center;">ID</th>
                           <th style="text-align:center;">Sujet</th>
-                          <th>Action</th>
+                          <th style="text-align:center;">Action</th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
                           <c:forEach items="${demandesMaintenance}" var="row" >
-								  <tr>
-								  			<td><input type="text" style="text-align:center;" size="2" id="inputDisabledEx2" value=<c:out value="${row.getId_demande_maintenance()}"/> class="form-control" disabled></td>
-								  			<td><input type="text" id="inputDisabledEx2" name="id6" value=<c:out value="${row.getSujet()}"/> class="form-control" disabled></td>
-								            <!--<td><c:out value="${row.getId_demande_maintenance()}"/></td>  
-								            <td><c:out value="${row.getSujet()}"/></td>
-								            -->
-								            
+								  <tr style="text-align:center;">
+								  			<td><c:out value="${row.getId_demande_maintenance()}"/></td>
+								  			<td><c:out value="${row.getSujet()}"/></td>			            
                           					<td>
 												                          <!-- Button trigger modal -->
 												<button style="margin-left:5px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#i<c:out value="${row.getId_demande_maintenance()}"/>">
@@ -213,7 +213,7 @@
 												      <div class="modal-body">
 												      			<div class="col-sm-12">
 																	<div class="form-group">
-																		ID de la demande de maintenance : <input type="text" name="id3" value=<c:out value="${row.getId_demande_maintenance()}"/> class="form-control">
+																		<input type="text" name="id3" value=<c:out value="${row.getId_demande_maintenance()}"/> class="form-control" hidden>
 																	</div>
 																</div> 
 												      		
@@ -245,7 +245,8 @@
 																
 																<div class="col-sm-12">
 																	<div class="form-group">
-																	Observations : <input type="text" name="observation_complementaire" value=<c:out value="${row.getObservation_complementaire()}"/> class="form-control" disabled><br>
+																		<label for="description">Description du problème</label>
+																		<textarea id="description" style="width: 440px;height: 150px;" type="text" name="description" class="form-control"><c:out value="${row.getDescription()}"/></textarea>
 																	</div>
 																</div>
 													      		

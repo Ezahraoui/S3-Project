@@ -49,9 +49,6 @@ public class AjouterLogicielServlet extends HttpServlet {
 		
         List<Produit> produits = ProduitDAO.getAll();
         request.setAttribute("produits", produits);
-        /*List<ChefDeProjet> chefsDeProjet = ChefDeProjetDAO.getAll();
-        request.setAttribute("chefsDeProjet", chefsDeProjet);*/
-        //request.getRequestDispatcher("traiterDemande.jsp").include(request,response);
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/listeProduits.jsp");
         dispatcher.forward(request, response);
         

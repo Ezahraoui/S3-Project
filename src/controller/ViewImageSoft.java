@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Blob;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -68,9 +69,10 @@ public class ViewImageSoft extends HttpServlet {
    
             if (produit == null) {
                 // No record found, redirect to default image.
-                response.sendRedirect(request.getContextPath() + "/images/noimage.jpg");
+            	response.sendRedirect(request.getContextPath() + "/images/noimage.png");
                 return;
             }
+
           
             // trump.jpg, putin.png
             String imageFileName = produit.getImageFileName();

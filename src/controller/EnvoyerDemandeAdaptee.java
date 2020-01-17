@@ -60,12 +60,12 @@ public class EnvoyerDemandeAdaptee extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
 		String id3 = request.getParameter("id3");
+		String message = new String();
 		String id2 = request.getParameter("id2");
 		if(id3 == null) {System.out.println("jad");}else {System.out.println("finish");}
 
         if (id2 != null && !id2.isEmpty()) {
-        	DemandeAdaptee demandeAdaptee = new DemandeAdaptee();
-            
+        	DemandeAdaptee demandeAdaptee = new DemandeAdaptee();        
         	demandeAdaptee.setId_demande_adaptee(Long.parseLong(id3));
             DemandeAdapteeDAO.update(demandeAdaptee, Long.parseLong(id2));
           

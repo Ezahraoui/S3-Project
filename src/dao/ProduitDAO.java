@@ -16,8 +16,8 @@ import java.util.List;
 
 import java.sql.Blob;
 import java.util.Base64;
- 
 
+import bean.Commande;
 import bean.Produit;
 
 public class ProduitDAO {
@@ -72,5 +72,18 @@ public static Connection getConnection(){
 	        } catch(Exception e){}
 	        return null;
 	}
+	    
+	    public static int delete(Long id){
+	        int status=0;
+	        try{
+	            Connection conn = ProduitDAO.getConnection();
+	            PreparedStatement ps = conn.prepareStatement("delete from produit where ID_PRODUIT=?");
+	            ps.setLong(1, id);
+
+	            status = ps.executeUpdate();
+	            conn.close();}
+	            catch(Exception e){System.out.println(e);}
+	            return status;
+	    }
 	    
 }

@@ -25,7 +25,7 @@
     <!-- Custom stylesheet - for your changes-->
     <link rel="stylesheet" href="css/custom.css">
     <!-- Favicon and apple touch icons-->
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="img1/Ecommerce Plateform.png" type="image/x-icon">
     <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
     <link rel="apple-touch-icon" sizes="57x57" href="img/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
@@ -59,8 +59,10 @@
 								<a href="login.jsp" class="login-btn"><i class="fa fa-sign-in"></i><span
 									class="d-none d-md-inline-block">Se connecter</span></a>
 									
-									<a href="register.jsp" class="signup-btn"><i class="fa fa-user"></i><span class="d-none d-md-inline-block">Créer
-										un compte</span></a>
+									<a href="registerClient.jsp" class="signup-btn"><i class="fa fa-user"></i><span class="d-none d-md-inline-block">Créer
+										compte Client</span></a>
+									<a href="registerChefProjet.jsp" class="signup-btn"><i class="fa fa-user"></i><span class="d-none d-md-inline-block">Créer
+										compte CdP</span></a>
 
 							</div>
 							<!-- <ul class="social-custom list-inline">
@@ -122,7 +124,7 @@
 					<span class="sr-only">Toggle navigation</span><i
 						class="fa fa-align-justify"></i>
 				</button>
-				<div id="navigation" class="navbar-collapse collapse">
+				<!-- <div id="navigation" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav ml-auto">
 						<li class="nav-item dropdown active"><a
 							href="javascript: void(0)" data-toggle="dropdown"
@@ -139,7 +141,7 @@
 							</ul></li>
 
 					</ul>
-				</div>
+				</div> -->
 				<div id="search" class="collapse clearfix">
 					<form role="search" class="navbar-form">
 						<div class="input-group">
@@ -155,69 +157,6 @@
 			</div>
 		</div>
 		</header>
-      <!-- Navbar End-->
-      <!-- <section style="background: url('img/photogrid.jpg') center center repeat; background-size: cover;" class="bar background-white relative-positioned">
-        <div class="container">
-          <div class="home-carousel">
-            <div class="dark-mask mask-primary"></div>
-            <div class="container">
-              <div class="homepage owl-carousel">
-                <div class="item">
-                  <div class="row">
-                    <div class="col-md-5 text-right">
-                      <p><img src="img/logo.png" alt="" class="ml-auto"></p>
-                      <h1>Multipurpose responsive theme</h1>
-                      <p>Business. Corporate. Agency.<br>Portfolio. Blog. E-commerce.</p>
-                    </div>
-                    <div class="col-md-7"><img src="img/template-homepage.png" alt="" class="img-fluid"></div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="row">
-                    <div class="col-md-7 text-center"><img src="img/template-mac.png" alt="" class="img-fluid"></div>
-                    <div class="col-md-5">
-                      <h2>46 HTML pages full of features</h2>
-                      <ul class="list-unstyled">
-                        <li>Sliders and carousels</li>
-                        <li>4 Header variations</li>
-                        <li>Google maps, Forms, Megamenu, CSS3 Animations and much more</li>
-                        <li>+ 11 extra pages showing template features</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="row">
-                    <div class="col-md-5 text-right">
-                      <h1>Consulting</h1>
-                      <ul class="list-unstyled">
-                        <li>Clean and elegant design</li>
-                        <li>Full width and boxed mode</li>
-                        <li>Easily readable Roboto font and awesome icons</li>
-                        <li>7 preprepared colour variations</li>
-                      </ul>
-                    </div>
-                    <div class="col-md-7"><img src="img/consulting1.jpg" alt="" class="img-fluid"></div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="row">
-                    <div class="col-md-7"><img src="img/template-easy-code.png" alt="" class="img-fluid"></div>
-                    <div class="col-md-5">
-                      <h1>Easy to customize</h1>
-                      <ul class="list-unstyled">
-                        <li>7 preprepared colour variations.</li>
-                        <li>Easily to change fonts</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </section> -->
       <section style="background: url('img/photogrid.jpg') center center repeat; background-size: cover;" class="bar background-white relative-positioned">
         <div class="container">
           <!-- Carousel Start-->
@@ -229,12 +168,10 @@
                   <div class="row">
                     <div class="col-md-7 text-center"><img src="img/template-easy-code.png" alt="" class="img-fluid"></div>
                     <div class="col-md-5">
-                      <h2>46 HTML pages full of features</h2>
+                      <h2>Esoft includes everything you need to successfully sell software globally.</h2>
                       <ul class="list-unstyled">
-                        <li>Sliders and carousels</li>
-                        <li>4 Header variations</li>
-                        <li>Google maps, Forms, Megamenu, CSS3 Animations and much more</li>
-                        <li>+ 11 extra pages showing template features</li>
+                        <li>Easy-to-use</li>
+                        <li>Full-service ecommerce platform</li>
                       </ul>
                     </div>
                   </div>
@@ -305,31 +242,14 @@
             <li class="item">
               <div class="testimonial d-flex flex-wrap">
                 <div class="text">
-                  <p>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections.</p>
+                  <p>Actually loving esoft. It's been a total revelation, is very user-friendly & has an excellent support hub.</p>
                 </div>
                 <div class="bottom d-flex align-items-center justify-content-between align-self-end">
                   <div class="icon"><i class="fa fa-quote-left"></i></div>
                   <div class="testimonial-info d-flex">
                     <div class="title">
-                      <h5>John McIntyre</h5>
-                      <p>CEO, TransTech</p>
-                    </div>
-                    <div class="avatar"><img alt="" src="img/person-1.jpg" class="img-fluid"></div>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li class="item">
-              <div class="testimonial d-flex flex-wrap">
-                <div class="text">
-                  <p>The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What's happened to me? " he thought. It wasn't a dream.</p>
-                </div>
-                <div class="bottom d-flex align-items-center justify-content-between align-self-end">
-                  <div class="icon"><i class="fa fa-quote-left"></i></div>
-                  <div class="testimonial-info d-flex">
-                    <div class="title">
-                      <h5>John McIntyre</h5>
-                      <p>CEO, TransTech</p>
+                      <h5>John Marin</h5>
+                      <p><h6>CEO, MarssTech</h6></p>
                     </div>
                     <div class="avatar"><img alt="" src="img/person-2.jpg" class="img-fluid"></div>
                   </div>
@@ -339,15 +259,14 @@
             <li class="item">
               <div class="testimonial d-flex flex-wrap">
                 <div class="text">
-                  <p>His room, a proper human room although a little too small, lay peacefully between its four familiar walls.</p>
-                  <p>A collection of textile samples lay spread out on the table - Samsa was a travelling salesman - and above it there hung a picture that he had recently cut out of an illustrated magazine and housed in a nice, gilded frame.</p>
+                  <p>I am very happy with esoft. The platform is extremely user-friendly and in heavier selling cycles, it saves us significant time each week.</p>
                 </div>
                 <div class="bottom d-flex align-items-center justify-content-between align-self-end">
                   <div class="icon"><i class="fa fa-quote-left"></i></div>
                   <div class="testimonial-info d-flex">
                     <div class="title">
-                      <h5>John McIntyre</h5>
-                      <p>CEO, TransTech</p>
+                      <h5>Rania Khaldi</h5>
+                      <p><h6>CEO, TransTech</h6></p>
                     </div>
                     <div class="avatar"><img alt="" src="img/person-3.png" class="img-fluid"></div>
                   </div>
@@ -357,14 +276,14 @@
             <li class="item">
               <div class="testimonial d-flex flex-wrap">
                 <div class="text">
-                  <p>It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the whole of her lower arm towards the viewer. Gregor then turned to look out the window at the dull weather. Drops of rain could be heard hitting the pane, which made him feel quite sad.</p>
+                  <p>I want to say publicly (as I have said many times privately) the quick and thoughtful support that esoft offer their customers is GREAT.</p>
                 </div>
                 <div class="bottom d-flex align-items-center justify-content-between align-self-end">
                   <div class="icon"><i class="fa fa-quote-left"></i></div>
                   <div class="testimonial-info d-flex">
                     <div class="title">
-                      <h5>John McIntyre</h5>
-                      <p>CEO, TransTech</p>
+                      <h5>Alex Morgan</h5>
+                      <p><h6>CTO, JvaTech</h6></p>
                     </div>
                     <div class="avatar"><img alt="" src="img/person-4.jpg" class="img-fluid"></div>
                   </div>
@@ -374,14 +293,14 @@
             <li class="item">
               <div class="testimonial d-flex flex-wrap">
                 <div class="text">
-                  <p>It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the whole of her lower arm towards the viewer. Gregor then turned to look out the window at the dull weather. Drops of rain could be heard hitting the pane, which made him feel quite sad. Gregor then turned to look out the window at the dull weather. Drops of rain could be heard hitting the pane, which made him feel quite sad.</p>
+                  <p>I love my esoft. Easy platform to use, fantasic staff and nothing but great results!</p>
                 </div>
                 <div class="bottom d-flex align-items-center justify-content-between align-self-end">
                   <div class="icon"><i class="fa fa-quote-left"></i></div>
                   <div class="testimonial-info d-flex">
                     <div class="title">
                       <h5>John McIntyre</h5>
-                      <p>CEO, TransTech</p>
+                      <p><h6>CTO, EnsiasTech</h6></p>
                     </div>
                     <div class="avatar"><img alt="" src="img/person-1.jpg" class="img-fluid"></div>
                   </div>
@@ -396,9 +315,9 @@
         <div class="dark-mask"></div>
         <div class="container">
           <div class="icon icon-outlined icon-lg"><i class="fa fa-file-code-o" style="margin-top: 20px;"></i></div>
-          <h3 class="text-uppercase">Vous voulez voir nos projets?</h3>
-          <p class="lead">We have prepared for you more than 40 different HTML pages, including 5 variations of homepage.</p>
-          <p class="text-center"><a href="index2.html" class="btn btn-template-outlined-white btn-lg">See another homepage</a></p>
+          <h3 class="text-uppercase">You want to see our projects?</h3>
+          <p class="lead">We have prepared for you more than 40 different projects.</p>
+          
         </div>
       </section>
       <section class="bar bg-gray">

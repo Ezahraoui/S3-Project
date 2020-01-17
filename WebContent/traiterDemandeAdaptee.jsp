@@ -11,7 +11,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Bootstrap Dashboard by Bootstrapious.com</title>
+    <title>Session Administrateur</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
@@ -33,7 +33,7 @@
     <link rel="stylesheet" href="css2/custom.css">
 	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <!-- Favicon-->
-    <link rel="shortcut icon" href="img2/favicon.ico">
+    <link rel="shortcut icon" href="img1/Ecommerce Plateform.png">
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
@@ -55,6 +55,8 @@
        <div class="main-menu">
           <h5 class="sidenav-heading">Main</h5>
           <ul id="side-main-menu" class="side-menu list-unstyled">
+          	<li><a href="acceuilAdminTechnique.jsp" aria-expanded="false"> <i class="icon-interface-windows"></i>Home  </a>
+            </li>
           	<li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Demandes  </a>
               <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
                 <li><a href="DemandeAdapteeServlet">Demande Adaptee</a></li>
@@ -66,8 +68,10 @@
              <li><a href="#exampledropdown1" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Produits  </a>
               <ul id="exampledropdown1" class="collapse list-unstyled ">
                 <li><a href="ajouterLogiciel.jsp">Ajouter un nouveau produit</a></li>
+                <li><a href="AjouterLogicielServlet">Liste des logiciels</a></li>
               </ul>
             </li> 
+            <li><a href="ListeCommandes"> <i class="icon-form"></i>Commandes                              </a></li>
           </ul>
         </div>
       </div>
@@ -84,60 +88,6 @@
 						height="60"></div></a></div>
                   
               <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
-                <!-- Notifications dropdown-->
-                <!-- <li class="nav-item dropdown"> <a id="notifications" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-bell"></i><span class="badge badge-warning">12</span></a>
-                  <ul aria-labelledby="notifications" class="dropdown-menu">
-                    <li><a rel="nofollow" href="#" class="dropdown-item"> 
-                        <div class="notification d-flex justify-content-between">
-                          <div class="notification-content"><i class="fa fa-envelope"></i>You have 6 new messages </div>
-                          <div class="notification-time"><small>4 minutes ago</small></div>
-                        </div></a></li>
-                    <li><a rel="nofollow" href="#" class="dropdown-item"> 
-                        <div class="notification d-flex justify-content-between">
-                          <div class="notification-content"><i class="fa fa-twitter"></i>You have 2 followers</div>
-                          <div class="notification-time"><small>4 minutes ago</small></div>
-                        </div></a></li>
-                    <li><a rel="nofollow" href="#" class="dropdown-item"> 
-                        <div class="notification d-flex justify-content-between">
-                          <div class="notification-content"><i class="fa fa-upload"></i>Server Rebooted</div>
-                          <div class="notification-time"><small>4 minutes ago</small></div>
-                        </div></a></li>
-                    <li><a rel="nofollow" href="#" class="dropdown-item"> 
-                        <div class="notification d-flex justify-content-between">
-                          <div class="notification-content"><i class="fa fa-twitter"></i>You have 2 followers</div>
-                          <div class="notification-time"><small>10 minutes ago</small></div>
-                        </div></a></li>
-                    <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong> <i class="fa fa-bell"></i>view all notifications                                            </strong></a></li>
-                  </ul>
-                </li>-->
-               <!-- Messages dropdown
-                <li class="nav-item dropdown"> <a id="messages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-envelope"></i><span class="badge badge-info">10</span></a>
-                  <ul aria-labelledby="notifications" class="dropdown-menu">
-                    <li><a rel="nofollow" href="#" class="dropdown-item d-flex"> 
-                        <div class="msg-profile"> <img src="img/avatar-1.jpg" alt="..." class="img-fluid rounded-circle"></div>
-                        <div class="msg-body">
-                          <h3 class="h5">Jason Doe</h3><span>sent you a direct message</span><small>3 days ago at 7:58 pm - 10.06.2014</small>
-                        </div></a></li>
-                    <li><a rel="nofollow" href="#" class="dropdown-item d-flex"> 
-                        <div class="msg-profile"> <img src="img/avatar-2.jpg" alt="..." class="img-fluid rounded-circle"></div>
-                        <div class="msg-body">
-                          <h3 class="h5">Frank Williams</h3><span>sent you a direct message</span><small>3 days ago at 7:58 pm - 10.06.2014</small>
-                        </div></a></li>
-                    <li><a rel="nofollow" href="#" class="dropdown-item d-flex"> 
-                        <div class="msg-profile"> <img src="img/avatar-3.jpg" alt="..." class="img-fluid rounded-circle"></div>
-                        <div class="msg-body">
-                          <h3 class="h5">Ashley Wood</h3><span>sent you a direct message</span><small>3 days ago at 7:58 pm - 10.06.2014</small>
-                        </div></a></li>
-                    <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong> <i class="fa fa-envelope"></i>Read all messages    </strong></a></li>
-                  </ul>
-                </li> --> 
-                <!-- Languages dropdown    -->
-                <!--  <li class="nav-item dropdown"><a id="languages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link language dropdown-toggle"><img src="img/flags/16/GB.png" alt="English"><span class="d-none d-sm-inline-block">English</span></a>
-                  <ul aria-labelledby="languages" class="dropdown-menu">
-                    <li><a rel="nofollow" href="#" class="dropdown-item"> <img src="img/flags/16/DE.png" alt="English" class="mr-2"><span>German</span></a></li>
-                    <li><a rel="nofollow" href="#" class="dropdown-item"> <img src="img/flags/16/FR.png" alt="English" class="mr-2"><span>French                                                         </span></a></li>
-                  </ul>
-                </li> -->
                 <!-- Log out-->
                 <li class="nav-item"><a href="login.jsp" class="nav-link logout"> <span class="d-none d-sm-inline-block">Logout</span><i class="fa fa-sign-out"></i></a></li>
               </ul>
@@ -158,7 +108,7 @@
         <div class="container-fluid">
           <!-- Page Header-->
           <header> 
-            <h1 class="h3 display">Demandes           </h1>
+            <h1 class="h3 display">Demandes adaptèes           </h1>
           </header>
           <div class="row">
             <div class="col-lg-12">
@@ -173,15 +123,15 @@
                         <tr>
                           <th style="text-align:center;">ID</th>
                           <th style="text-align:center;">Sujet</th>
-                          <th>Action</th>
+                          <th style="text-align:center;">Action</th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
                           <c:forEach items="${demandesAdaptee}" var="row" >
-								  <tr>
-								  			<td><input type="text" style="text-align:center;" size="2" id="inputDisabledEx2" value=<c:out value="${row.getId_demande_adaptee()}"/> class="form-control" disabled></td>
-								  			<td><input type="text" id="inputDisabledEx2" name="id6" value=<c:out value="${row.getSujet()}"/> class="form-control" disabled></td>
+								  <tr style="text-align:center;">
+								  			<td><c:out value="${row.getId_demande_adaptee()}"/></td>
+								  			<td><c:out value="${row.getSujet()}"/></td>
 								            
                           					<td>
 												<!-- Button trigger modal -->
@@ -202,10 +152,11 @@
 												          <span aria-hidden="true">&times;</span>
 												        </button>
 												      </div>
+												      
 												      <div class="modal-body">
 												      			<div class="col-sm-12">
 																	<div class="form-group">
-																		ID de la demande : <input type="text" name="id3" value=<c:out value="${row.getId_demande_adaptee()}"/> class="form-control">
+																		<input type="text" name="id3" value=<c:out value="${row.getId_demande_adaptee()}"/> class="form-control" hidden>
 																	</div>
 																</div> 
 												      		
@@ -229,9 +180,10 @@
 																
 																<div class="col-sm-12">
 																	<div class="form-group">
-																		Description de la demande : <input type="text"  name="description" value=<c:out value="${row.getDescription()}"/> class="form-control" disabled><br>
+																		<label for="description">Description du problème</label>
+																		<textarea id="description" style="width: 440px;height: 150px;" type="text" name="description" class="form-control"><c:out value="${row.getDescription()}"/></textarea>
 																	</div>
-																</div> 
+																</div>
 																
 																
 																

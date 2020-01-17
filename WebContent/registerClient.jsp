@@ -51,9 +51,9 @@
 						<strong class="text-primary">E_SOFT</strong>
 					</div>
 					<p style="font-size: 19px;">
-						<bold>Join The Project Leader and Developer Community</bold>
+						<bold>Connectez-vous avec des Chefs de projet et des Développeurs. </bold>
 					</p>
-					<form  action="ClientRegisterServlet" method="post" class="text-left form-validate">
+					<form  action="Register" method="post" class="text-left form-validate">
 						<div class="form-group-material">
 							<input id="login-username" type="text" name="nom"
 								required data-msg="Veuillez saisir votre nom"
@@ -129,4 +129,26 @@
 		src="vendor1/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
 	<!-- Main File-->
 	<script src="js1/front1.js"></script>
+	<script type="text/javascript">
+	    $(document).ready(function() {
+	        $("#loginForm").validate({
+	            rules: {
+	                email: {
+	                    required: true,
+	                    email: true
+	                },
+	                password: "required",
+	            },
+	             
+	            messages: {
+	                email: {
+	                    required: "Please enter email",
+	                    email: "Please enter a valid email address"
+	                },
+	                 
+	                password: "Please enter password"
+	            }
+	        });
+	    });
+	</script>
 </body>

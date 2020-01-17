@@ -67,7 +67,7 @@ public class Login extends HttpServlet {
                 HttpSession session = request.getSession();
                 session.setAttribute("client", client);
                 session.setAttribute("id",client.getId_client());
-                destPage = "demandeMaintenance.jsp";
+                destPage = "acceuilClient1.jsp";
             } else if(chefDeProjet != null) {
             	HttpSession session = request.getSession();
                 session.setAttribute("chefDeProjet", chefDeProjet);

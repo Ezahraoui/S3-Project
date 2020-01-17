@@ -11,10 +11,6 @@ public class Produit {
 	private byte[] imageData;
     private String imageFileName;
     private String description;
-    private String shipping;
-    private String tax;
-    private String subtotal;
-    private String total;
 	private Blob document;
 	private Set<Commande> commandes;
 	public Long getId_produit() {
@@ -74,36 +70,15 @@ public class Produit {
 	public void setCommandes(Set<Commande> commandes) {
 		this.commandes = commandes;
 	}
-	public String getShipping() {
-		return String.format("%.2f", shipping);
-	}
-	public void setShipping(String shipping) {
-		this.shipping = shipping;
-	}
-	public String getTax() {
-		return String.format("%.2f", tax);
-	}
-	public void setTax(String tax) {
-		this.tax = tax;
-	}
-	
-	public String getSubtotal() {
-		return String.format("%.2f", subtotal);
-	}
-	
-	public String getTotal() {
-		return String.format("%.2f", total);
-	}
-	public void setTotal(String total) {
-		this.total = total;
-	}
-	public void setSubtotal(String subtotal) {
-		this.subtotal = subtotal;
-	}
 	public Produit() {
 		
 	}
 	
+	public Produit(String nom, Double prix) {
+		super();
+		this.nom = nom;
+		this.prix = prix;
+	}
 	public Produit(Long id_produit, String nom, Double prix,byte[] imageData, String imageFileName, Blob document) {
 		super();
 		this.id_produit = id_produit;

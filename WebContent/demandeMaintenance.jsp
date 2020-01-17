@@ -28,7 +28,7 @@ pageEncoding="UTF-8"%>
     <!-- Custom stylesheet - for your changes-->
     <link rel="stylesheet" href="css/custom.css">
     <!-- Favicon and apple touch icons-->
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="img1/Ecommerce Plateform.png" type="image/x-icon">
     <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
     <link rel="apple-touch-icon" sizes="57x57" href="img/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
@@ -140,19 +140,19 @@ pageEncoding="UTF-8"%>
 				</button>
 				<div id="navigation" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav ml-auto">
-						<li class="nav-item dropdown active"><a
-							href="javascript: void(0)" data-toggle="dropdown"
-							class="dropdown-toggle">Home <b class="caret"></b></a>
+						<li><a href="acceuilClient1.jsp"
+							href="javascript: void(0)" >Home</a></li>
+							
+							<li class="nav-item dropdown"><a href="javascript: void(0)"
+							data-toggle="dropdown" class="dropdown-toggle">Softwares <b
+								class="caret"></b></a>
 							<ul class="dropdown-menu">
-								<li class="dropdown-item"><a href="listeProduitsClients"
-									class="nav-link">Option 1: Default Page</a></li>
-								<li class="dropdown-item"><a href="index2.html"
-									class="nav-link">Option 2: Application</a></li>
-								<li class="dropdown-item"><a href="index3.html"
-									class="nav-link">Option 3: Startup</a></li>
-								<li class="dropdown-item"><a href="index4.html"
-									class="nav-link">Option 4: Agency</a></li>
+								<li class="dropdown-item"><a href="ListeProduitsClient"
+									class="nav-link">Les logiciels</a></li>
+								<li class="dropdown-item"><a href="ListeCommandesClient"
+									class="nav-link">Mes commandes</a></li>
 							</ul></li>
+							
 							<li class="nav-item dropdown"><a href="javascript: void(0)"
 							data-toggle="dropdown" class="dropdown-toggle">Demande <b
 								class="caret"></b></a>
@@ -164,14 +164,14 @@ pageEncoding="UTF-8"%>
 									<li class="dropdown-item"><a href="ListeDemandesClient"
 									class="nav-link">Mes demandes de maintenance</a></li>
 							</ul></li>
+							
 							<li class="nav-item dropdown"><a href="javascript: void(0)"
-							data-toggle="dropdown" class="dropdown-toggle">Softwares <b
+							data-toggle="dropdown" class="dropdown-toggle">Compte <b
 								class="caret"></b></a>
+								
 							<ul class="dropdown-menu">
-								<li class="dropdown-item"><a href="ListeProduitsClient"
-									class="nav-link">Les logiciels</a></li>
-								<li class="dropdown-item"><a href="ListeCommandesClient"
-									class="nav-link">Mes commandes</a></li>
+								<li class="dropdown-item"><a href="ModifierInfoClient"
+									class="nav-link">Modifier votre compte</a></li>
 							</ul></li>
 					</ul>
 				</div>

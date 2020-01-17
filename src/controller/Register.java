@@ -58,7 +58,7 @@ public class Register extends HttpServlet {
 	   			 out.println("To login with your Email and Password<a href=login.jsp>Click here</a>");
 	   		 }else{
 	   			 out.println("<h1>Registration Failed</h1>");
-	   			 out.println("To try again<a href=register.jsp>Click here</a>");
+	   			 out.println("To try again<a href=registerChefProjet.jsp>Click here</a>");
 	   		 }
 	   		 out.println("</center>");
 	   		 out.println("</body>");
@@ -89,7 +89,7 @@ public class Register extends HttpServlet {
   		 out.println("<center>");
   		 if(!clientDAO.validate(client)){
   			 out.println("<h1>Thanks for Registering with us :</h1>");
-  			 out.println("To login with your Email and Password<a href=loginClient.jsp>Click here</a>");
+  			 out.println("To login with your Email and Password<a href=login.jsp>Click here</a>");
   		 }else{
   			 out.println("<h1>Registration Failed</h1>");
   			 out.println("To try again<a href=registerClient.jsp>Click here</a>");
