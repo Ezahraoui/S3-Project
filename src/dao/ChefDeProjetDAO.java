@@ -113,7 +113,7 @@ public class ChefDeProjetDAO {
         int status=0;
         try{
             Connection conn = ChefDeProjetDAO.getConnection();
-            PreparedStatement ps = conn.prepareStatement("update chef_de_projet set NOM=?, PRENOM=?, EMAIL=?, PASSWORD=?, GITHUB=?, ADRESSE=?, NUM_TELEPHONE=? where chef_de_projet .ID_CHEF_PROJET = ?");
+            PreparedStatement ps = conn.prepareStatement("update chef_de_projet set NOM=?, PRENOM=?, EMAIL=?, PASSWORD=?, GITHUB=?, ADRESSE=?, NUM_TELEPHONE=? where ID_CHEF_PROJET= ?");
             ps.setString(1, cp.getNomCP());
             ps.setString(2, cp.getPrenomCP());
             ps.setString(3, cp.getEmailCP());

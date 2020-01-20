@@ -136,7 +136,7 @@
                       <c:forEach items="${chefsDeProjet}" var="row" >
 						<form action="ModifierInfoChefProjet" method="post">
 							<div class="row">
-							   
+							   <input type="text" id="inputDisabledEx1" name="id" value="<%= session.getAttribute("id") %>" class="form-control" hidden>
 								<div class="col-sm-12">
 									<div class="form-group">
 										<label for="subject"></label> <input type="text" id="inputDisabledEx2" name="nom" value=<c:out value="${row.getNomCP()}"/> class="form-control" hidden>

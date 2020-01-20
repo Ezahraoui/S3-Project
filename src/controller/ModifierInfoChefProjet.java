@@ -68,10 +68,10 @@ public class ModifierInfoChefProjet extends HttpServlet {
             cp.setGithubCP(github);
             cp.setAdresseCP(adresse);
             cp.setNum_telephoneCP(tel);
-            System.out.println("*****************************");
+
             ChefDeProjetDAO.update(cp);  
             message ="Your details have been successfully updated. Return to : ";
-            System.out.println(message);
+
      	    request.setAttribute("message", message);
             
             
