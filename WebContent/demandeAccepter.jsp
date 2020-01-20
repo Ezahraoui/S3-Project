@@ -33,7 +33,7 @@
     <link rel="stylesheet" href="css2/custom.css">
 	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <!-- Favicon-->
-    <link rel="shortcut icon" href="img2/favicon.ico">
+    <link rel="shortcut icon" href="img1/Ecommerce Plateform.png">
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
@@ -55,12 +55,16 @@
        <div class="main-menu">
           <h5 class="sidenav-heading">Main</h5>
           <ul id="side-main-menu" class="side-menu list-unstyled">
+          	<li><a href="acceuilChefProjet.jsp" aria-expanded="false"> <i class="icon-interface-windows"></i>Home  </a>
+            </li>
           	<li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Demandes  </a>
               <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
                 <li><a href="TraiterDemandeAdaptee">Demande Adaptee</a></li>
                 <li><a href="TraiterDemandeMaintenance">Demande de Maintenance</a></li>
               </ul>
-            </li>                  
+            </li>
+            <li><a href="ModifierInfoChefProjet" aria-expanded="false" > <i class="icon-interface-windows"></i>Modifier mon compte  </a>
+            </li>
           </ul>
         </div>
       </div>

@@ -70,7 +70,9 @@ public class EnvoyerDemandeAdaptee extends HttpServlet {
             DemandeAdapteeDAO.update(demandeAdaptee, Long.parseLong(id2));
           
         }
-        request.getRequestDispatcher("acceuilAdminTechnique.jsp").include(request,response);
+        message ="La demande a été envoyée au CdP selectionné. Cliquer ici pour revenir à : ";
+ 	    request.setAttribute("message", message);
+        request.getRequestDispatcher("envoyerAdapteeCdP.jsp").include(request,response);
        
     }
 	}

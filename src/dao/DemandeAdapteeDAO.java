@@ -103,6 +103,7 @@ public static Connection getConnection(){
 	            	da.setDescription(rs.getString(5));
 	            	da.setDocument_joindre(rs.getBlob(6));
 	            	da.setCapaciteFinancement(rs.getDouble(7));
+	            	da.setEtat(rs.getInt(8));
 	            	demandesAdaptee.add(da);
 	            	
 	            	client.setNomCLT(rs.getString("NOM"));

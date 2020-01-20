@@ -67,6 +67,7 @@ public class AjouterLogicielServlet extends HttpServlet {
         String description = request.getParameter("description");
         String prix = request.getParameter("prix");
         System.out.println(nom);
+        String message = new String();
         
         InputStream inputStream = null;
         Part filePart = request.getPart("file");
@@ -94,7 +95,10 @@ public class AjouterLogicielServlet extends HttpServlet {
 
         
         ProduitDAO.save(produit, inputStream, inputStream1);
-        request.getRequestDispatcher("ajouterLogiciel.jsp").include(request,response);
+        message ="Le produit a été ajouté avec succèes .Cliquer pour aller à : ";
+
+ 	    request.setAttribute("message", message);
+        request.getRequestDispatcher("ajouterLogicielSuccess.jsp").include(request,response);
 	}
 
 }

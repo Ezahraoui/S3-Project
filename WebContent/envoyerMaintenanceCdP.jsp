@@ -32,20 +32,9 @@
     <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
     <!-- Custom stylesheet - for your changes-->
     <link rel="stylesheet" href="css/custom.css">
-    <!-- Favicon and apple touch icons-->
-    <link rel="shortcut icon" href="img1/Ecommerce Plateform.png" type="image/x-icon">
-    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="57x57" href="img/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="img/apple-touch-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="img/apple-touch-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="img/apple-touch-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="img/apple-touch-icon-152x152.png">
+    
     <!-- Bootstrap CSS-->
     <link rel="stylesheet" href="vendor2/bootstrap/css/bootstrap.min.css">
-     <!-- Material Design Bootstrap -->
-    <link href="vendor/mdb/css/mdb.min.css" rel="stylesheet">
     <!-- Font Awesome CSS-->
     <link rel="stylesheet" href="vendor2/font-awesome/css/font-awesome.min.css">
     <!-- Fontastic Custom icon font-->
@@ -130,7 +119,7 @@
         <div class="container-fluid">
           <ul class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-            <li class="breadcrumb-item active">Commandes       </li>
+            <li class="breadcrumb-item active">Demandes       </li>
           </ul>
         </div>
       </div>
@@ -138,113 +127,65 @@
         <div class="container-fluid">
           <!-- Page Header-->
           <header> 
-            <h1 class="h3 display">Les commandes des clients           </h1>
+            <h1 class="h3 display">Demandes de maintenance           </h1>
           </header>
           <div class="row">
-					<c:forEach items="${commandes}" var="row" >
-						<div class="card border-primary mr-4" style="width: 15rem;">
-						  <img class="card-img-top" src="ViewImageSoft?id=${row.getProduit().getId_produit()}" alt="Card image cap">
-						  <div class="card-body">
-						  	<ul class="list-group">
-							  <li class="list-group-item" style="font-weight: bold;text-align:center"><c:out value="${row.getProduit().getNom()}"/></li>
-							   <li class="list-group-item" style="font-weight: bold;text-align:center">Client : <c:out value="${row.getClient().getNomCLT()}"/> <c:out value="${row.getClient().getPrenomCLT()}"/></li>
-							  <li  style="list-style-type: none;text-align:center"><!-- Button trigger modal -->
-							  		<button style="margin-left:5px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#i<c:out value="${row.getProduit().getId_produit()}"/>">
-												Description
-									</button>
-									<div class="modal fade" id="i<c:out value="${row.getProduit().getId_produit()}"/>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-												  aria-hidden="true">
-												  <div class="modal-dialog" role="document">
-												    <form>
-												    <div class="modal-content">
-												    
-												      <div class="modal-header">
-												        <h5 class="modal-title" id="exampleModalLabel">Informations sur logiciel</h5>
-												        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-												          <span aria-hidden="true">&times;</span>
-												        </button>
-												      </div>
-												      <div class="modal-body">
-																<div class="col-sm-12">
-																	<div class="form-group">
-																		<label for="description">Description du problème</label>
-																		<textarea id="description" style="width: 420px;height: 300px;" type="text" name="description" class="form-control"><c:out value="${row.getProduit().getDescription()}"/></textarea>
-																	</div>
-																</div>
-																<div class="modal-footer">
-																        <button type="button" class="btn btn-secondary" data-dismiss="modal">Sortir</button>
-													           </div>	          
-												       </div>      
-												      </div>
-												    </form>
-												  </div>  
-								   </div>
-							  </li>
-							  <li class="list-group-item" style="font-weight: bold;text-align:center">Prix : <c:out value="${row.getProduit().getPrix()}"/> USD</li>
-							  <li style="list-style-type: none;text-align:center">
-								<c:choose>
-									<c:when test="${row.getEtat()==0}"><div class="alert alert-primary" role="alert">
-	  													Commande non encore livrer
-													</div>
-													
-													<button style="margin-left:5px;" type="button" class="btn btn-success" data-toggle="modal" data-target="#j<c:out value="${row.getProduit().getId_produit()}"/>">
-																Livrer
-													</button>
-													<div class="modal fade" id="j<c:out value="${row.getProduit().getId_produit()}"/>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-																  aria-hidden="true">
-																  <div class="modal-dialog" role="document">
-																  
-																    <form>
-																    <div class="modal-content">
-																    
-																      <div class="modal-header">
-																        <h5 class="modal-title" id="exampleModalLabel">Livrer commande</h5>
-																        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-																          <span aria-hidden="true">&times;</span>
-																        </button>
-																      </div>
-																      <div class="modal-body">
-																      			<div class="col-sm-12">
-																					<div class="form-group">
-																						Voulez-vous vraiment livrer la commande?
-																						
-																						<input type="text" name="nom_produit" value=<c:out value="${row.getProduit().getNom()}"/> class="form-control" hidden>
-																						<input type="text" name="prix_produit" value=<c:out value="${row.getProduit().getPrix()}"/> class="form-control" hidden>
-																						<!-- <input type="text" name="id_client" value=<c:out value="${row.getClient().getId_client()}"/> class="form-control" hidden>
-																						<input type="text" name="nom_client" value=<c:out value="${row.getClient().getNomCLT()}"/> class="form-control" hidden>
-																						<input type="text" name="prenom_client" value=<c:out value="${row.getClient().getPrenomCLT()}"/> class="form-control" hidden>
-																						<input type="text" name="email" value=<c:out value="${row.getClient().getEmailCLT()}"/> class="form-control" hidden>
-																						<input type="text" name="cin" value=<c:out value="${row.getClient().getCinCLT()}"/> class="form-control" hidden>
-																						<input type="text" name="adresse" value=<c:out value="${row.getClient().getAdresseCLT()}"/> class="form-control" hidden>
-																						<input type="text" name="num" value=<c:out value="${row.getClient().getNum_telephoneCLT()}"/> class="form-control" hidden> -->
-																					</div>
-																				</div> 
-																      		
-																				<div class="modal-footer">
-																						<a class="form-control" style="font-weight: bold;color:green;text-align:center" href="LivrerProduit?id=${row.getId_commande()}&type=a">Livrer</a>
-																				        <button type="button" class="btn btn-secondary" data-dismiss="modal">Sortir</button>
-																	           </div>       
-																      </div>
-																    </div>
-																    </form>
-																  </div>
-													</div>
-										
-									</c:when>
-									<c:when test="${row.getEtat()==1}"><div class="alert alert-success" role="alert">
-	  														Commande déjà livrée
-													</div>
-									</c:when> 
-								</c:choose>
-							</li>
-							  
-							  
-							  
-							</ul>
-						  </div>
+            <div class="col-lg-12">
+              <div class="card">
+                <div class="card-header">
+                  
+                  	<div class="col-md-12">
+						<div class="heading text-center">
+							<h2></h2>
 						</div>
-					</c:forEach>
-				</div>
+						<div class="alert alert-success" role="alert">
+						        ${message}&nbsp;<a href="DemandeMaintenanceServlet">Liste des demandes de maintenance</a>
+						</div>
+			       </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="row">
+            <div class="col-md-12">
+						<div class="heading text-center">
+							<h2>Ajouter un logiciel</h2>
+						</div>
+			</div>
+                <div class="col-md-8 mx-auto">
+						<form action="#" method="post" enctype="multipart/form-data">
+							<div class="row">
+							   
+								<div class="col-sm-12">
+									<div class="form-group">
+										<label for="subject">Nom du logiciel</label> <input id="nom"
+											type="text" name="nom" class="form-control"></br>
+									</div>
+								</div>
+								<div class="col-sm-12">
+									<div class="form-group">
+										<label for="prix">Prix du logiciel</label> <input id="prix"
+											type="text" name="prix" class="form-control"></br>
+									</div>
+								</div>
+								<div class="col-sm-12">
+									<div class="form-group">
+										<label for="file">Entrer le logiciel sous format ZIP ou .EXE</label>
+									    <input type="file" name="file" class="form-control"/>
+									</div>
+										 
+								</div>
+		
+								<div class="col-sm-12 text-center">
+									<button type="submit" class="btn btn-template-outlined">
+										<i class="fa fa-envelope-o"></i> Ajouter le logiciel
+									</button>
+								</div>
+							</div>
+						</form>
+					</div>
+            </div> -->
+          </div>
         </div>
       </section>
       <footer class="main-footer">
@@ -270,9 +211,8 @@
     <script src="vendor2/chart.js/Chart.min.js"></script>
     <script src="vendor2/jquery-validation/jquery.validate.min.js"></script>
     <script src="vendor2/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
-    <!-- Main File-->
-    <script src="js2/front.js"></script>
-	<script src="vendor/jquery/jquery.min.js"></script>
+    
+    <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/popper.js/umd/popper.min.js"> </script>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
     <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
@@ -287,5 +227,15 @@
     <script src="js/gmaps.js"></script>
     <script src="js/gmaps.init.js"></script>
     <script src="js/front.js"></script>
+    <!-- Main File-->
+    <script src="js2/front.js"></script>
+	<script>
+// Add the following code if you want the name of the file appear on select
+$(".custom-file-input").on("change", function() {
+  var fileName = $(this).val().split("\\").pop();
+  $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+});
+</script>
+	
   </body>
 </html>

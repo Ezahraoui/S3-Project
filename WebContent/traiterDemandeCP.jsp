@@ -161,7 +161,7 @@
             <div class="col-lg-12">
               <div class="card">
                 <div class="card-header">
-                  <h4>La liste des demandes</h4>
+                  <h4>La liste des demandes de maintenance</h4>
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
@@ -171,6 +171,7 @@
                           <th style="text-align:center;">ID</th>
                           <th style="text-align:center;">Sujet</th>
                           <th style="text-align:center;">Action</th>
+                          <th style="text-align:center;">Etat de la demande</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -181,6 +182,7 @@
 								  			<td><c:out value="${row.getSujet()}"/></td>
 								            
                           					<td>
+                          						
 												                          <!-- Button trigger modal -->
 												<button style="margin-left:5px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#i<c:out value="${row.getId_demande_maintenance()}"/>">
 												<i class="fa fa-id-card"></i></button>
@@ -193,73 +195,6 @@
 												<div class="modal fade" id="i<c:out value="${row.getId_demande_maintenance()}"/>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
 												  aria-hidden="true">
 												  <div class="modal-dialog" role="document">
-												  
-												    <!-- <form action="TraiterDemandeMaintenance" method="post" >
-												    <div class="modal-content">
-												    
-												      <div class="modal-header">
-												        <h5 class="modal-title" id="exampleModalLabel">Informations de la demande</h5>
-												        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-												          <span aria-hidden="true">&times;</span>
-												        </button>
-												      </div>
-												      <div class="modal-body">
-												      			<div class="col-sm-12">
-																	<div class="form-group">
-																		ID de la demande de maintenance : <input type="text" name="id3" value=<c:out value="${row.getId_demande_maintenance()}"/> class="form-control">
-																	</div>
-																</div> 
-												      		
-																<div class="col-sm-12">
-																	<div class="form-group">
-																		ID du client : <input type="text"  name="id" value=<c:out value="${row.getClient().getId_client()}"/> class="form-control" disabled>
-																	</div>
-																	
-																</div> 
-																
-																<div class="col-sm-12">
-																	<div class="form-group">
-																		Nom du client : <input type="text" name="nom" value=<c:out value="${row.getClient().getNomCLT()}"/> class="form-control" disabled><br>
-																	</div>
-																</div> 
-													      		
-													      		<div class="col-sm-12">
-																	<div class="form-group">
-																		Prénom du client : <input type="text"  name="prenom" value=<c:out value="${row.getClient().getPrenomCLT()}"/> class="form-control" disabled><br>
-																	</div>
-																</div> 
-																
-																<div class="col-sm-12">
-																	<div class="form-group">
-																		Description de la demande : <input type="text"  name="description" value=<c:out value="${row.getDescription()}"/> class="form-control" disabled><br>
-																	</div>
-																</div> 
-																
-																
-																
-																<div class="col-sm-12">
-																	<div class="form-group">
-																	Observations : <input type="text" name="observation_complementaire" value=<c:out value="${row.getObservation_complementaire()}"/> class="form-control" disabled><br>
-																	</div>
-																</div>
-													      		
-													      		<div class="col-sm-12">
-																	<div class="form-group">
-																		Consulter le document : <a type="file" name="file" class="form-control" href="downloadAttachment?id=${row.getId_demande_maintenance()}">Cliquer ici pour télecharger le cahier des charges</a><br>
-																	</div>		 
-																</div>
-																 
-																
-																<div class="modal-footer">
-																        <button  type="submit"class="btn btn-primary">Accepter la demande</button>
-																        <button type="button" class="btn btn-secondary" data-dismiss="modal">Sortir</button>
-													           </div>
-												      	
-												      		<!-- <c:out value="${row.getDocument_joindre()}"/><br> -->	          
-												    <!-- </div>
-												      
-												    </div>
-												    </form>  -->
 												    <form action="TraiterDemandeMaintenance" method="post">
 												    <div class="modal-content">
 												    
@@ -319,9 +254,12 @@
 																<div class="modal-footer">
 																        <!-- <button  type="submit" href="AccepterRefuserDemande?id=${row.getId_demande_maintenance()}&type=a" class="btn btn-primary">Accepter la demande</button>
 																        <button  type="submit" href="AccepterRefuserDemande?id=${row.getId_demande_maintenance()}&type=r" class="btn btn-primary">Refuser la demande</button> -->
-																        
+																        <c:choose>
+											   							<c:when test="${row.getEtat()==0}">
 																        <a class="form-control" style="color:green" href="AccepterRefuserDemande?id=${row.getId_demande_maintenance()}&type=a">Accepter la demande</a>
 																        <a class="form-control" style="color:red" href="AccepterRefuserDemande?id=${row.getId_demande_maintenance()}&type=r">Refuser la demande</a>
+																        </c:when>
+																        </c:choose>
 																        <button type="button" class="btn btn-secondary" data-dismiss="modal">Sortir</button>
 													           </div>
 												      	
@@ -335,7 +273,23 @@
 												  
 												</div>
 					                    </td>
-					                    
+					                    <td style="text-align:center;">
+					                        <c:choose>
+											   <c:when test="${row.getEtat()==0}">
+											   		<div class="alert alert-primary" role="alert">
+  														Demande en cours de traitement					
+													</div>
+												</c:when>
+											   <c:when test="${row.getEtat()==1}"><div class="alert alert-success" role="alert">
+  														Demande acceptée
+												</div>
+												</c:when> 
+											   <c:otherwise><div class="alert alert-danger" role="alert">
+ 													Demande refusée
+												</div>
+												</c:otherwise>
+											</c:choose>
+										</td> 
 					    	  </tr>   
 						  </c:forEach>
 

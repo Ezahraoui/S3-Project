@@ -112,7 +112,7 @@
         <div class="container-fluid">
           <ul class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-            <li class="breadcrumb-item active">Softwares       </li>
+            <li class="breadcrumb-item active">Compte       </li>
           </ul>
         </div>
       </div>

@@ -133,7 +133,7 @@
 						</div>
 						<div class="alert alert-success" role="alert">
 						        ${message}&nbsp;<a href="acceuilChefProjet.jsp">Ma page d'acceuil</a>
-						     </div>
+						</div>
 			       </div>
                 </div>
                 

@@ -107,7 +107,7 @@
             <div class="col-lg-12">
               <div class="card">
                 <div class="card-header">
-                  <h4>La liste des demandes</h4>
+                  <h4>La liste des demandes adaptèes</h4>
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
@@ -117,6 +117,7 @@
                           <th style="text-align:center;">ID</th>
                           <th style="text-align:center;">Sujet</th>
                           <th style="text-align:center;">Action</th>
+                          <th style="text-align:center;">Etat de la demande</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -194,8 +195,12 @@
 																 
 																
 																<div class="modal-footer">
+																	<c:choose>
+											   							<c:when test="${row.getEtat()==0}">
 																        <a class="form-control" style="color:green" href="AccepterRefuserDemandeAdaptee?id=${row.getId_demande_adaptee()}&type=a">Accepter la demande</a>
 																        <a class="form-control" style="color:red" href="AccepterRefuserDemandeAdaptee?id=${row.getId_demande_adaptee()}&type=r">Refuser la demande</a>
+																       </c:when>
+																       </c:choose>
 																        <button type="button" class="btn btn-secondary" data-dismiss="modal">Sortir</button>
 													           </div>
 												      	
@@ -208,7 +213,24 @@
 												  
 												</div>
 					                    </td>
-					                    
+					                    <td style="text-align:center;">
+					                        <c:choose>
+											   <c:when test="${row.getEtat()==0}">
+											   		<div class="alert alert-primary" role="alert">
+  														Demande en cours de traitement
+  														
+													</div>
+												</c:when>
+											   <c:when test="${row.getEtat()==1}"><div class="alert alert-success" role="alert">
+  														Demande acceptée
+												</div>
+												</c:when> 
+											   <c:otherwise><div class="alert alert-danger" role="alert">
+ 													Demande refusée
+												</div>
+												</c:otherwise>
+											</c:choose>
+										</td>
 					    	  </tr>   
 						  </c:forEach>
 

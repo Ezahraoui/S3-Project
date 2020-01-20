@@ -61,7 +61,7 @@ public class EnvoyerDemandeMaintenance extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		String id3 = request.getParameter("id3");
 		String id2 = request.getParameter("id2");
-
+		String message = new String();
 
         if (id2 != null && !id2.isEmpty()) {
         	DemandeMaintenance demandeMaintenance = new DemandeMaintenance();
@@ -70,7 +70,9 @@ public class EnvoyerDemandeMaintenance extends HttpServlet {
             DemandeMaintenanceDAO.update(demandeMaintenance, Long.parseLong(id2));
           
         }
-        request.getRequestDispatcher("acceuilAdminTechnique.jsp").include(request,response);
+        message ="La demande a été envoyée au CdP selectionné. Cliquer ici pour revenir à : ";
+ 	    request.setAttribute("message", message);
+        request.getRequestDispatcher("envoyerMaintenanceCdP.jsp").include(request,response);
        
     }
 	}

@@ -102,6 +102,7 @@ public class DemandeMaintenanceDAO {
 	            	dm.setDescription(rs.getString(5));
 	            	dm.setDocument_joindre(rs.getBlob(6));
 	            	dm.setObservation_complementaire(rs.getString(7));
+	            	dm.setEtat(rs.getInt(8));
 	            	demandesMaintenance.add(dm);
 	            	client.setNomCLT(rs.getString("NOM"));
 	            	client.setId_client(rs.getLong("ID_CLIENT"));
