@@ -150,12 +150,12 @@ pageEncoding="UTF-8"%>
 								class="caret"></b></a>
 							<ul class="dropdown-menu">
 								<li class="dropdown-item"><a href="ListeProduitsClient"
-									class="nav-link">Les logiciels</a></li>
+									class="nav-link">Commander un logiciel</a></li>
 								<li class="dropdown-item"><a href="ListeCommandesClient"
 									class="nav-link">Mes commandes</a></li>
 							</ul></li>
 							
-							<li><a href="listePanier.jsp"
+							<li><a href="ListPanier"
 							href="javascript: void(0)" >Panier</a></li>
 							
 							<li class="nav-item dropdown"><a href="javascript: void(0)"
@@ -178,6 +178,7 @@ pageEncoding="UTF-8"%>
 								<li class="dropdown-item"><a href="ModifierInfoClient"
 									class="nav-link">Modifier votre compte</a></li>
 							</ul></li>
+							
 					</ul>
 				</div>
 				<div id="search" class="collapse clearfix">
@@ -201,7 +202,7 @@ pageEncoding="UTF-8"%>
 			<div class="container">
 				<div class="row d-flex align-items-center flex-wrap">
 					<div class="col-md-7">
-						<h1 class="h2">Demande</h1>
+						<h1 class="h2">Softwares</h1>
 					</div>
 					<div class="col-md-5">
 						<ul class="breadcrumb d-flex justify-content-end">
@@ -231,124 +232,93 @@ pageEncoding="UTF-8"%>
 				<div class="row">
 					<div class="col-md-12">
 						<div class="heading text-center">
-							<h2>Liste des demandes de maintenance</h2>
+							<h2>Mon Panier</h2>
 						</div>
-						<div class="card-body">
-                  <div class="table-responsive">
-                    <table class="table">
-                      <thead>
-                        <tr>
-                          <th style="text-align:center;">ID</th>
-                          <th >Informations</th>
-                          <th style="text-align:center;">Décision</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <c:forEach items="${demandesMaintenance}" var="row" >
-								  <tr>
-								  			<td><input type="text" style="text-align:center;" size="2" id="inputDisabledEx2" value=<c:out value="${row.getId_demande_maintenance()}"/> class="form-control" disabled></td>
-								  			
-								            
-                          					<td>
-												                          <!-- Button trigger modal -->
-												<button style="margin-left:5px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#i<c:out value="${row.getId_demande_maintenance()}"/>">
-												<i class="fa fa-id-card"></i></button>
-												
-												
-												<!-- Modal -->
-												<div class="modal fade" id="i<c:out value="${row.getId_demande_maintenance()}"/>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+						
+			
+					</div>
+				</div>
+				<div class="row">
+				
+					<c:forEach items="${list}" var="row" >
+						
+						<div class="card border-primary mr-4" style="width: 15rem;">
+						  
+						  <div class="card-body">
+						  	<ul class="list-group">
+							  <li class="list-group-item" style="font-weight: bold;text-align:center"><c:out value="${row.getNom()}"/></li>
+							  <li class="list-group-item" style="text-align:center">
+							  		<button style="margin-left:5px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#i<c:out value="${row.getId_produit()}"/>">
+												Description
+									</button>
+									<div class="modal fade" id="i<c:out value="${row.getId_produit()}"/>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
 												  aria-hidden="true">
 												  <div class="modal-dialog" role="document">
-												  
 												    <form>
 												    <div class="modal-content">
 												    
 												      <div class="modal-header">
-												        <h5 class="modal-title" id="exampleModalLabel">Informations de la demande</h5>
+												        <h5 class="modal-title" id="exampleModalLabel">Informations sur logiciel</h5>
 												        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 												          <span aria-hidden="true">&times;</span>
 												        </button>
 												      </div>
 												      <div class="modal-body">
-												      			
-																
+																<div class="col-sm-12">
+																	<div class="form-group">
+																		<label for="description">Description du problème</label>
+																		<textarea id="description" style="width: 420px;height: 300px;" type="text" name="description" class="form-control"><c:out value="${row.getDescription()}"/></textarea>
+																	</div>
+																</div>
+																<div class="modal-footer">
+																        <button type="button" class="btn btn-secondary" data-dismiss="modal">Sortir</button>
+													           </div>	          
+												       </div>      
+												      </div>
+												    </form>
+												  </div>  
+								   </div>
+							</li>
+							<li class="list-group-item" style="font-weight: bold;text-align:center">Prix : <c:out value="${row.getPrix()}"/> USD</li>
+							<li class="list-group-item" style="text-align:center">
+							  		<button style="margin-left:5px;" type="button" class="btn btn-success" data-toggle="modal" data-target="#j<c:out value="${row.getId_produit()}"/>">
+												Commander
+									</button>
+									<div class="modal fade" id="j<c:out value="${row.getId_produit()}"/>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+												  aria-hidden="true">
+												  <div class="modal-dialog" role="document">
+												  
+												    <form action="Commander" method="post" >
+												    <div class="modal-content">
+												    
+												      <div class="modal-header">
+												        <h5 class="modal-title" id="exampleModalLabel">Commander</h5>
+												        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												          <span aria-hidden="true">&times;</span>
+												        </button>
+												      </div>
+												      <div class="modal-body">
 												      			<div class="col-sm-12">
 																	<div class="form-group">
-																		ID de la demande de maintenance : <input type="text" name="id3" value=<c:out value="${row.getId_demande_maintenance()}"/> class="form-control">
+																		Voulez-vous vraiment passer la commande?
+																		<input type="text" name="id10" value=<c:out value="${row.getId_produit()}"/> class="form-control" hidden>
 																	</div>
 																</div> 
-																
-																<div class="col-sm-12">
-																	<div class="form-group">
-																		Sujet de la demande : <input type="text"  name="description" value=<c:out value="${row.getSujet()}"/> class="form-control" disabled><br>
-																	</div>
-																</div> 
-																
-																<div class="col-sm-12">
-																	<div class="form-group">
-																		Description de la demande : <input type="text"  name="description" value=<c:out value="${row.getDescription()}"/> class="form-control" disabled><br>
-																	</div>
-																</div> 
-																
-																
-																
-																<div class="col-sm-12">
-																	<div class="form-group">
-																	Observations : <input type="text" name="observation_complementaire" value=<c:out value="${row.getObservation_complementaire()}"/> class="form-control" disabled><br>
-																	</div>
-																</div>
-													      		
-													      		<div class="col-sm-12">
-																	<div class="form-group">
-																		Consulter le document : <a type="file" name="file" class="form-control" href="downloadAttachment?id=${row.getId_demande_maintenance()}">Cliquer ici pour télecharger le cahier des charges</a><br>
-																	</div>		 
-																</div>
-																
-																<div class="modal-footer">	       
+												      		
+																<div class="modal-footer">
+																        <button  type="submit"class="btn btn-primary">Commander</button>
 																        <button type="button" class="btn btn-secondary" data-dismiss="modal">Sortir</button>
-													           </div>
-          
+													           </div>       
 												      </div>
-												      
 												    </div>
 												    </form>
 												  </div>
-												  
-												</div>
-					                    </td>
-					                    
-					                    <td style="text-align:center;"><c:choose>
-											   <c:when test="${row.getEtat()==0}">
-											   		<div class="alert alert-primary" role="alert">
-  														Demande en cours de traitement
-  														
-													</div>
-													
-												</c:when>
-											   <c:when test="${row.getEtat()==1}"><div class="alert alert-success" role="alert">
-  														Demande acceptée
-												</div>
-												</c:when> 
-											   <c:otherwise><div class="alert alert-danger" role="alert">
- 													Demande refusée
-												</div>
-												</c:otherwise>
-											</c:choose></td>
-					                    <!-- <td><input type="text" style="text-align:center;" size="20" id="inputDisabledEx2" value=<c:out value="${row.getEtat()}"/> class="form-control" disabled></td> -->
-					                   
-					                    
-					    	  </tr>   
-						  </c:forEach>
-
-                      </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-					</div>
-					
-					
+									</div>
+							  </li>
+							</ul>
+						  </div>
+						</div>
+					</c:forEach>
 					
 				</div>
 				</section>

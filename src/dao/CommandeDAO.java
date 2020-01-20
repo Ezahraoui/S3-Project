@@ -182,5 +182,17 @@ public static Connection getConnection(){
             catch(Exception e){System.out.println(e);}
             return status;
     }
+	
+	  public static int delete(Long id){
+	        int status=0;
+	        try{
+	            Connection conn = CommandeDAO.getConnection();
+	            PreparedStatement ps = conn.prepareStatement("delete from commande where ID_COMMANDE=?");
+	            ps.setLong(1, id);
 
+	            status = ps.executeUpdate();
+	            conn.close();}
+	            catch(Exception e){System.out.println(e);}
+	            return status;
+	    }
 }

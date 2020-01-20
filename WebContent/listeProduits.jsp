@@ -101,6 +101,7 @@
                 <li><a href="AjouterLogicielServlet">Liste des logiciels</a></li>
               </ul>
             </li> 
+            <li><a href="ListeCommandes"> <i class="icon-form"></i>Commandes                              </a></li>
           </ul>
         </div>
       </div>

@@ -12,12 +12,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import bean.Administrateur;
 import bean.AdministrateurTechnique;
 import bean.ChefDeProjet;
 import bean.Client;
 import bean.DemandeMaintenance;
-import dao.AdministrateurDAO;
 import dao.AdministrateurTechniqueDAO;
 import dao.ChefDeProjetDAO;
 import dao.ClientDAO;
@@ -60,7 +58,6 @@ public class Login extends HttpServlet {
             Client client = clientDAO.authentification(email, password);
             ChefDeProjet chefDeProjet = chefDeProjetDAO.authentification(email, password);
             AdministrateurTechnique administrateurTechnique = administrateurTechniqueDAO.authentification(email, password);
-            //Administrateur administrateur = administrateurDAO.authentification(email, password);
             String destPage = "login.jsp";
              
             if (client != null) {
@@ -78,11 +75,6 @@ public class Login extends HttpServlet {
                 session.setAttribute("administrateurTechnique", administrateurTechnique);
                 session.setAttribute("id",administrateurTechnique.getId_admin_technique());
                 destPage = "acceuilAdminTechnique.jsp";
-            /*} else if(administrateur != null) {
-            	HttpSession session = request.getSession();
-                session.setAttribute("administrateur", administrateur);
-                session.setAttribute("id",administrateur.getId_admin());
-                destPage = "loginsuccess.jsp";*/
             }
             else {
                 String message = "Invalid email/password";

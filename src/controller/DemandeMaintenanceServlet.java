@@ -68,6 +68,7 @@ public class DemandeMaintenanceServlet extends HttpServlet {
 
         String sujet = request.getParameter("sujet");
         String description = request.getParameter("description");
+        String message = new String();
         
         InputStream inputStream = null;
         Part filePart = request.getPart("file");
@@ -86,7 +87,9 @@ public class DemandeMaintenanceServlet extends HttpServlet {
         demandeMaintenance.setObservation_complementaire(observation_complementaire);
         
         DemandeMaintenanceDAO.save(demandeMaintenance, inputStream, id);
-        request.getRequestDispatcher("demandeMaintenance.jsp").include(request,response);
+        message ="La demande a été envoyée avec succès. Cliquer ici pour revenir à la liste des demandes : ";
+ 	    request.setAttribute("message", message);
+        request.getRequestDispatcher("demandeMaintenanceSuccess.jsp").include(request,response);
 	}
 
 }

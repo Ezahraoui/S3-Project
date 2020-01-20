@@ -155,6 +155,9 @@ pageEncoding="UTF-8"%>
 									class="nav-link">Mes commandes</a></li>
 							</ul></li>
 							
+							<li><a href="listePanier.jsp"
+							href="javascript: void(0)" >Panier</a></li>
+							
 							<li class="nav-item dropdown"><a href="javascript: void(0)"
 							data-toggle="dropdown" class="dropdown-toggle">Demande <b
 								class="caret"></b></a>
@@ -231,116 +234,6 @@ pageEncoding="UTF-8"%>
 						<div class="heading text-center">
 							<h2>Nos Produits</h2>
 						</div>
-						
-						<!-- <div class="card-body">
-                  <div class="table-responsive">
-                    <table class="table">
-                      <thead>
-                        <tr>
-                          <th style="text-align:center;">ID</th>
-                          <th style="text-align:center;">Nom</th>
-                          <th style="text-align:center;">Description</th>
-                          <th style="text-align:center;">Prix</th>
-                          <th style="text-align:center;">Image</th>
-                          <th style="text-align:center;">Action</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                         <!-- 
-                         row
-                          --><!-- 
-                          <c:forEach items="${produits}" var="row" >
-            					 <!-- 
-            					 	div card
-            					  -->
-								  <!--<tr>
-								  			<td><input type="text" style="text-align:center;" size="2" id="inputDisabledEx2" value=<c:out value="${row.getId_produit()}"/> class="form-control" disabled></td>
-								  			<td><input type="text" id="inputDisabledEx2" size="2" name="id6" value=<c:out value="${row.getNom()}"/> class="form-control" disabled></td>
-								  			<td>
-											    <!-- Button trigger modal -->
-												<!--<button style="margin-left:5px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#i<c:out value="${row.getId_produit()}"/>">
-												<i class="fa fa-id-card"></i></button>
-												<!-- Modal -->
-												<!-- <div class="modal fade" id="i<c:out value="${row.getId_produit()}"/>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-												  aria-hidden="true">
-												  <div class="modal-dialog" role="document">
-												    <form>
-												    <div class="modal-content">
-												    
-												      <div class="modal-header">
-												        <h5 class="modal-title" id="exampleModalLabel">Informations sur logiciel</h5>
-												        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-												          <span aria-hidden="true">&times;</span>
-												        </button>
-												      </div>
-												      <div class="modal-body">
-																<div class="col-sm-12">
-																	<div class="form-group">
-																		<label for="description">Description du problème</label>
-																		<textarea id="description" style="width: 420px;height: 300px;" type="text" name="description" class="form-control"><c:out value="${row.getDescription()}"/></textarea>
-																	</div>
-																</div>
-																<!-- <div class="col-sm-12">
-																	<div class="form-group">
-																		Description du logiciel : <input type="text" style="word-wrap: break-word;" name="description" value=<c:out value="${row.getDescription()}"/> class="form-control"><br>				
-																	</div>
-																</div>  -->
-																<!-- <div class="modal-footer">
-																        <button type="button" class="btn btn-secondary" data-dismiss="modal">Sortir</button>
-													           </div>	          
-												      </div>      
-												    </div>
-												    </form>
-												  </div>  
-												</div>
-					                        </td>
-								  			<td><input type="text" id="inputDisabledEx2" name="id6" value=<c:out value="${row.getPrix()}"/> class="form-control" disabled></td>
-								  			<td><a type="file" name="file" class="form-control" href="ViewImageSoft?id=${row.getId_produit()}">Cliquer ici pour voir image</a></td>
-								  			
-								  			<td>
-												 
-												<button style="margin-left:5px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#j<c:out value="${row.getId_produit()}"/>">
-												<i class="fa fa-id-card"></i></button>
-												
-												
-												<div class="modal fade" id="j<c:out value="${row.getId_produit()}"/>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-												  aria-hidden="true">
-												  <div class="modal-dialog" role="document">
-												  
-												    <form action="Commander" method="post" >
-												    <div class="modal-content">
-												    
-												      <div class="modal-header">
-												        <h5 class="modal-title" id="exampleModalLabel">Voulez-vous vraiment passer la commande?</h5>
-												        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-												          <span aria-hidden="true">&times;</span>
-												        </button>
-												      </div>
-												      <div class="modal-body">
-												      			<div class="col-sm-12">
-																	<div class="form-group">
-																		<input type="text" name="id10" value=<c:out value="${row.getId_produit()}"/> class="form-control" hidden>
-																	</div>
-																</div> 
-												      		
-																<div class="modal-footer">
-																        <button  type="submit"class="btn btn-primary">Commander</button>
-																        <button type="button" class="btn btn-secondary" data-dismiss="modal">Sortir</button>
-													           </div>       
-												      </div>
-												    </div>
-												    </form>
-												  </div>
-												</div>
-					                    </td>		
-					    	  </tr>   
-						  </c:forEach>
-                      </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div> -->
 					</div>
 				</div>
 				<div class="row">
@@ -383,7 +276,7 @@ pageEncoding="UTF-8"%>
 								   </div>
 							</li>
 							<li class="list-group-item" style="font-weight: bold;text-align:center">Prix : <c:out value="${row.getPrix()}"/> USD</li>
-							  <li class="list-group-item" style="text-align:center">
+							 <li class="list-group-item" style="text-align:center">
 							  		<button style="margin-left:5px;" type="button" class="btn btn-success" data-toggle="modal" data-target="#j<c:out value="${row.getId_produit()}"/>">
 												Commander
 									</button>
@@ -418,56 +311,20 @@ pageEncoding="UTF-8"%>
 												  </div>
 									</div>
 							  </li>
-							</ul>
-						    <!-- <ul class="list-group">
-							  <li class="list-group-item">Nom du produit <input type="text" id="inputDisabledEx2" size="2" name="id6" value=<c:out value="${row.getNom()}"/> class="form-control" disabled></li>
-							  <li class="list-group-item">Informations sur logiciel
-							  		<button style="margin-left:5px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#i<c:out value="${row.getId_produit()}"/>">
-												<i class="fa fa-id-card"></i>
+							  
+							  <li class="list-group-item" style="text-align:center">
+							  		<button style="margin-left:5px;" type="button" class="btn btn-warning" data-toggle="modal" data-target="#k<c:out value="${row.getId_produit()}"/>">
+												Ajouter au panier
 									</button>
-									<div class="modal fade" id="i<c:out value="${row.getId_produit()}"/>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-												  aria-hidden="true">
-												  <div class="modal-dialog" role="document">
-												    <form>
-												    <div class="modal-content">
-												    
-												      <div class="modal-header">
-												        <h5 class="modal-title" id="exampleModalLabel">Informations sur logiciel</h5>
-												        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-												          <span aria-hidden="true">&times;</span>
-												        </button>
-												      </div>
-												      <div class="modal-body">
-																<div class="col-sm-12">
-																	<div class="form-group">
-																		<label for="description">Description du problème</label>
-																		<textarea id="description" style="width: 420px;height: 300px;" type="text" name="description" class="form-control"><c:out value="${row.getDescription()}"/></textarea>
-																	</div>
-																</div>
-																<div class="modal-footer">
-																        <button type="button" class="btn btn-secondary" data-dismiss="modal">Sortir</button>
-													           </div>	          
-												       </div>      
-												      </div>
-												    </form>
-												  </div>  
-								   </div>
-												
-							 </li>
-							  <li class="list-group-item">Prix du logiciel<input type="text" id="inputDisabledEx2" name="id6" value=<c:out value="${row.getPrix()}"/> class="form-control" disabled></li>
-							  <li class="list-group-item">Commander
-							  		<button style="margin-left:5px;" type="button" class="btn btn-success" data-toggle="modal" data-target="#j<c:out value="${row.getId_produit()}"/>">
-												<i class="fa fa-shopping-cart"></i>
-									</button>
-									<div class="modal fade" id="j<c:out value="${row.getId_produit()}"/>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+									<div class="modal fade" id="k<c:out value="${row.getId_produit()}"/>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
 												  aria-hidden="true">
 												  <div class="modal-dialog" role="document">
 												  
-												    <form action="Commander" method="post" >
+												    <form action="AjouterPanier" method="post">
 												    <div class="modal-content">
 												    
 												      <div class="modal-header">
-												        <h5 class="modal-title" id="exampleModalLabel">Commander</h5>
+												        <h5 class="modal-title" id="exampleModalLabel">Panier</h5>
 												        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 												          <span aria-hidden="true">&times;</span>
 												        </button>
@@ -475,13 +332,18 @@ pageEncoding="UTF-8"%>
 												      <div class="modal-body">
 												      			<div class="col-sm-12">
 																	<div class="form-group">
-																		Voulez-vous vraiment passer la commande?
-																		<input type="text" name="id10" value=<c:out value="${row.getId_produit()}"/> class="form-control" hidden>
+																		Voulez-vous vraiment ajouter au panier?
+																		<input type="text" name="id" value=<c:out value="${row.getId_produit()}"/> class="form-control" hidden>
+																		<input type="text" name="nom" value=<c:out value="${row.getNom()}"/> class="form-control" hidden>
+																		<input type="text" name="prix" value=<c:out value="${row.getPrix()}"/> class="form-control" hidden>
+																		<input type="text" name="desc" value=<c:out value="${row.getDescription()}"/> class="form-control" hidden>
+																		<input type="file" name="picture" src="ViewImageSoft?id=${row.getId_produit()}" class="form-control" hidden>
+																		
 																	</div>
 																</div> 
 												      		
 																<div class="modal-footer">
-																        <button  type="submit"class="btn btn-primary">Commander</button>
+																        <button  type="submit"class="btn btn-primary">Ajouter au panier</button>
 																        <button type="button" class="btn btn-secondary" data-dismiss="modal">Sortir</button>
 													           </div>       
 												      </div>
@@ -489,8 +351,8 @@ pageEncoding="UTF-8"%>
 												    </form>
 												  </div>
 									</div>
-							 </li>
-							</ul> -->
+							  </li>
+							</ul>
 						  </div>
 						</div>
 					</c:forEach>

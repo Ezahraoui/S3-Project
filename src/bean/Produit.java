@@ -1,6 +1,7 @@
 package bean;
 
 
+import java.io.InputStream;
 import java.sql.Blob;
 import java.util.Set;
 
@@ -9,6 +10,7 @@ public class Produit {
 	private String nom;
 	private Double prix;
 	private byte[] imageData;
+	//private InputStream image;
     private String imageFileName;
     private String description;
 	private Blob document;
@@ -88,7 +90,42 @@ public class Produit {
 		this.imageFileName = imageFileName;
 		this.document = document;
 	}
+	public Produit(Long id_produit, String nom, Double prix, String description) {
+		super();
+		this.id_produit = id_produit;
+		this.nom = nom;
+		this.prix = prix;
+		this.description = description;
+	}
+	public Produit(String nom, Double prix, String description) {
+		super();
+		this.nom = nom;
+		this.prix = prix;
+		this.description = description;
+	}
+	public Produit(String nom, Double prix, byte[] imageData, String description) {
+		super();
+		this.nom = nom;
+		this.prix = prix;
+		this.imageData = imageData;
+		this.description = description;
+	}
 	
+	/*public Produit(String nom, Double prix, InputStream image, String description) {
+		super();
+		this.nom = nom;
+		this.prix = prix;
+		this.image = image;
+		this.description = description;
+	}*/
+	public Produit(Long id_produit, String nom, Double prix, byte[] imageData, String description) {
+		super();
+		this.id_produit = id_produit;
+		this.nom = nom;
+		this.prix = prix;
+		this.imageData = imageData;
+		this.description = description;
+	}
 	
 	
 }

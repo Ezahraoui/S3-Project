@@ -134,6 +134,9 @@
 									class="nav-link">Mes commandes</a></li>
 							</ul></li>
 							
+							<li><a href="listePanier.jsp"
+							href="javascript: void(0)" >Panier</a></li>
+														
 							<li class="nav-item dropdown"><a href="javascript: void(0)"
 							data-toggle="dropdown" class="dropdown-toggle">Demande <b
 								class="caret"></b></a>

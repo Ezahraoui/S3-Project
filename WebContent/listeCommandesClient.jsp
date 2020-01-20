@@ -150,10 +150,13 @@ pageEncoding="UTF-8"%>
 								class="caret"></b></a>
 							<ul class="dropdown-menu">
 								<li class="dropdown-item"><a href="ListeProduitsClient"
-									class="nav-link">Les logiciels</a></li>
+									class="nav-link">Commander un logiciel</a></li>
 								<li class="dropdown-item"><a href="ListeCommandesClient"
 									class="nav-link">Mes commandes</a></li>
 							</ul></li>
+							
+							<li><a href="listePanier.jsp"
+							href="javascript: void(0)" >Panier</a></li>
 							
 							<li class="nav-item dropdown"><a href="javascript: void(0)"
 							data-toggle="dropdown" class="dropdown-toggle">Demande <b
@@ -313,6 +316,49 @@ pageEncoding="UTF-8"%>
 																      		
 																				<div class="modal-footer">
 																						<input type="submit" class="btn btn-primary" value="Payer" />
+																				        <button type="button" class="btn btn-secondary" data-dismiss="modal">Sortir</button>
+																	           </div>       
+																      </div>
+																    </div>
+																    </form>
+																  </div>
+													</div>
+													
+													<button style="margin-left:5px;" type="button" class="btn btn-danger" data-toggle="modal" data-target="#g<c:out value="${row.getProduit().getId_produit()}"/>">
+																Annuler
+													</button>
+													<div class="modal fade" id="g<c:out value="${row.getProduit().getId_produit()}"/>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+																  aria-hidden="true">
+																  <div class="modal-dialog" role="document">
+																  
+																    <form action="AnnulerCommande" method="post" >
+																    <div class="modal-content">
+																    
+																      <div class="modal-header">
+																        <h5 class="modal-title" id="exampleModalLabel">Annuler la commande</h5>
+																        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+																          <span aria-hidden="true">&times;</span>
+																        </button>
+																      </div>
+																      <div class="modal-body">
+																      			<div class="col-sm-12">
+																					<div class="form-group">
+																						Voulez-vous vraiment annuler la commande?
+																						
+																						<input type="text" name="id" value=<c:out value="${row.getId_commande()}"/> class="form-control" hidden>
+																						<input type="text" name="prix_produit" value=<c:out value="${row.getProduit().getPrix()}"/> class="form-control" hidden>
+																						<!-- <input type="text" name="id_client" value=<c:out value="${row.getClient().getId_client()}"/> class="form-control" hidden>
+																						<input type="text" name="nom_client" value=<c:out value="${row.getClient().getNomCLT()}"/> class="form-control" hidden>
+																						<input type="text" name="prenom_client" value=<c:out value="${row.getClient().getPrenomCLT()}"/> class="form-control" hidden>
+																						<input type="text" name="email" value=<c:out value="${row.getClient().getEmailCLT()}"/> class="form-control" hidden>
+																						<input type="text" name="cin" value=<c:out value="${row.getClient().getCinCLT()}"/> class="form-control" hidden>
+																						<input type="text" name="adresse" value=<c:out value="${row.getClient().getAdresseCLT()}"/> class="form-control" hidden>
+																						<input type="text" name="num" value=<c:out value="${row.getClient().getNum_telephoneCLT()}"/> class="form-control" hidden> -->
+																					</div>
+																				</div> 
+																      		
+																				<div class="modal-footer">
+																						<input type="submit" class="btn btn-primary" value="Annuler" />
 																				        <button type="button" class="btn btn-secondary" data-dismiss="modal">Sortir</button>
 																	           </div>       
 																      </div>

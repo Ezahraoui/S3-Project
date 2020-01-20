@@ -155,6 +155,9 @@ pageEncoding="UTF-8"%>
 									class="nav-link">Mes commandes</a></li>
 							</ul></li>
 							
+							<li><a href="listePanier.jsp"
+							href="javascript: void(0)" >Panier</a></li>
+							
 							<li class="nav-item dropdown"><a href="javascript: void(0)"
 							data-toggle="dropdown" class="dropdown-toggle">Demande <b
 								class="caret"></b></a>
@@ -230,6 +233,7 @@ pageEncoding="UTF-8"%>
 						<div class="heading text-center">
 							<h2>Modifier vos informations</h2>
 						</div>
+						 
 					</div>
 					<div class="col-md-8 mx-auto">
 					   <c:forEach items="${clients}" var="row" >

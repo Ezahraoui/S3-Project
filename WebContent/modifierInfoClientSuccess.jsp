@@ -1,6 +1,4 @@
 <%@page import="bean.Client"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -201,7 +199,7 @@ pageEncoding="UTF-8"%>
 			<div class="container">
 				<div class="row d-flex align-items-center flex-wrap">
 					<div class="col-md-7">
-						<h1 class="h2">Demande</h1>
+						<h1 class="h2">Votre compte</h1>
 					</div>
 					<div class="col-md-5">
 						<ul class="breadcrumb d-flex justify-content-end">
@@ -231,124 +229,12 @@ pageEncoding="UTF-8"%>
 				<div class="row">
 					<div class="col-md-12">
 						<div class="heading text-center">
-							<h2>Liste des demandes de maintenance</h2>
+							<h2>Modification des informations </h2>
 						</div>
-						<div class="card-body">
-                  <div class="table-responsive">
-                    <table class="table">
-                      <thead>
-                        <tr>
-                          <th style="text-align:center;">ID</th>
-                          <th >Informations</th>
-                          <th style="text-align:center;">Décision</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <c:forEach items="${demandesMaintenance}" var="row" >
-								  <tr>
-								  			<td><input type="text" style="text-align:center;" size="2" id="inputDisabledEx2" value=<c:out value="${row.getId_demande_maintenance()}"/> class="form-control" disabled></td>
-								  			
-								            
-                          					<td>
-												                          <!-- Button trigger modal -->
-												<button style="margin-left:5px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#i<c:out value="${row.getId_demande_maintenance()}"/>">
-												<i class="fa fa-id-card"></i></button>
-												
-												
-												<!-- Modal -->
-												<div class="modal fade" id="i<c:out value="${row.getId_demande_maintenance()}"/>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-												  aria-hidden="true">
-												  <div class="modal-dialog" role="document">
-												  
-												    <form>
-												    <div class="modal-content">
-												    
-												      <div class="modal-header">
-												        <h5 class="modal-title" id="exampleModalLabel">Informations de la demande</h5>
-												        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-												          <span aria-hidden="true">&times;</span>
-												        </button>
-												      </div>
-												      <div class="modal-body">
-												      			
-																
-												      			<div class="col-sm-12">
-																	<div class="form-group">
-																		ID de la demande de maintenance : <input type="text" name="id3" value=<c:out value="${row.getId_demande_maintenance()}"/> class="form-control">
-																	</div>
-																</div> 
-																
-																<div class="col-sm-12">
-																	<div class="form-group">
-																		Sujet de la demande : <input type="text"  name="description" value=<c:out value="${row.getSujet()}"/> class="form-control" disabled><br>
-																	</div>
-																</div> 
-																
-																<div class="col-sm-12">
-																	<div class="form-group">
-																		Description de la demande : <input type="text"  name="description" value=<c:out value="${row.getDescription()}"/> class="form-control" disabled><br>
-																	</div>
-																</div> 
-																
-																
-																
-																<div class="col-sm-12">
-																	<div class="form-group">
-																	Observations : <input type="text" name="observation_complementaire" value=<c:out value="${row.getObservation_complementaire()}"/> class="form-control" disabled><br>
-																	</div>
-																</div>
-													      		
-													      		<div class="col-sm-12">
-																	<div class="form-group">
-																		Consulter le document : <a type="file" name="file" class="form-control" href="downloadAttachment?id=${row.getId_demande_maintenance()}">Cliquer ici pour télecharger le cahier des charges</a><br>
-																	</div>		 
-																</div>
-																
-																<div class="modal-footer">	       
-																        <button type="button" class="btn btn-secondary" data-dismiss="modal">Sortir</button>
-													           </div>
-          
-												      </div>
-												      
-												    </div>
-												    </form>
-												  </div>
-												  
-												</div>
-					                    </td>
-					                    
-					                    <td style="text-align:center;"><c:choose>
-											   <c:when test="${row.getEtat()==0}">
-											   		<div class="alert alert-primary" role="alert">
-  														Demande en cours de traitement
-  														
-													</div>
-													
-												</c:when>
-											   <c:when test="${row.getEtat()==1}"><div class="alert alert-success" role="alert">
-  														Demande acceptée
-												</div>
-												</c:when> 
-											   <c:otherwise><div class="alert alert-danger" role="alert">
- 													Demande refusée
-												</div>
-												</c:otherwise>
-											</c:choose></td>
-					                    <!-- <td><input type="text" style="text-align:center;" size="20" id="inputDisabledEx2" value=<c:out value="${row.getEtat()}"/> class="form-control" disabled></td> -->
-					                   
-					                    
-					    	  </tr>   
-						  </c:forEach>
-
-                      </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
+						<div class="alert alert-success" role="alert">
+						        ${message}&nbsp;<a href="ListeProduitsClient">Nos Produits</a>
+						     </div>
 					</div>
-					
-					
 					
 				</div>
 				</section>
@@ -441,5 +327,12 @@ pageEncoding="UTF-8"%>
     <script src="js/gmaps.js"></script>
     <script src="js/gmaps.init.js"></script>
     <script src="js/front.js"></script>
+    <script>
+// Add the following code if you want the name of the file appear on select
+$(".custom-file-input").on("change", function() {
+  var fileName = $(this).val().split("\\").pop();
+  $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+});
+</script>
   </body>
 </html>

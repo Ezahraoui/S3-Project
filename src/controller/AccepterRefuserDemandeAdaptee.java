@@ -41,14 +41,14 @@ public class AccepterRefuserDemandeAdaptee extends HttpServlet {
 	           String type = request.getParameter("type");
 	           if(type.equals("a")) {
 	        	   DemandeAdapteeDAO.updateEtat2(id, 1);
-	        	   message = "La demande a été accepter. Cliquer ici pour revenir à la liste des demandes";
+	        	   message = "La demande a été acceptée. Cliquer ici pour revenir à la liste des demandes";
 	        	   request.setAttribute("message", message);
 	        	   RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/demandeAdapteeAccepter.jsp");
 	               dispatcher.forward(request, response);
 	           }
 	           if(type.contentEquals("r")) {
 	        	   DemandeAdapteeDAO.updateEtat2(id, 3);
-	        	   message ="La demande a été refuser. Cliquer ici pour revenir à la liste des demandes";
+	        	   message ="La demande a été refusée. Cliquer ici pour revenir à la liste des demandes";
 	        	   request.setAttribute("message", message);
 	        	   RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/demandeAdapteeRefuser.jsp");
 	               dispatcher.forward(request, response);

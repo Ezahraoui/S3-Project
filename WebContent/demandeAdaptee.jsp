@@ -153,6 +153,9 @@ pageEncoding="UTF-8"%>
 									class="nav-link">Mes commandes</a></li>
 							</ul></li>
 							
+							<li><a href="listePanier.jsp"
+							href="javascript: void(0)" >Panier</a></li>
+							
 							<li class="nav-item dropdown"><a href="javascript: void(0)"
 							data-toggle="dropdown" class="dropdown-toggle">Demande <b
 								class="caret"></b></a>
@@ -232,7 +235,7 @@ pageEncoding="UTF-8"%>
 					<div class="col-md-8 mx-auto">
 						<form action="DemandeAdapteeServlet" method="post" enctype="multipart/form-data">
 							<div class="row">
-							   ID: <input type="text" id="inputDisabledEx2" name="id" value="<%= session.getAttribute("id") %>" class="form-control" disabled>
+							   <input type="text" id="inputDisabledEx2" name="id" value="<%= session.getAttribute("id") %>" class="form-control" hidden>
 								<div class="col-sm-12">
 									<div class="form-group">
 										<label for="subject">Sujet</label> <input id="subject"

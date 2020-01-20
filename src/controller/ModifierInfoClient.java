@@ -54,6 +54,7 @@ public class ModifierInfoClient extends HttpServlet {
 		String cin = request.getParameter("cin");
 		String adresse = request.getParameter("adresse");
 		String tel = request.getParameter("tel");
+		String message= new String();
 
         if (id != null && !id.isEmpty()) {
         	Client client = new Client();
@@ -68,10 +69,11 @@ public class ModifierInfoClient extends HttpServlet {
             client.setNum_telephoneCLT(tel);
 	
             ClientDAO.update(client);  
-            
+            message ="Your details have been successfully updated. Return to : ";
+     	    request.setAttribute("message", message);
             
         }
-        request.getRequestDispatcher("/modifierInfoClient.jsp").include(request,response);
+        request.getRequestDispatcher("/modifierInfoClientSuccess.jsp").include(request,response);
 	}
 
 }

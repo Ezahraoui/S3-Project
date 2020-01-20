@@ -73,17 +73,5 @@ public static Connection getConnection(){
 	        return null;
 	}
 	    
-	    public static int delete(Long id){
-	        int status=0;
-	        try{
-	            Connection conn = ProduitDAO.getConnection();
-	            PreparedStatement ps = conn.prepareStatement("delete from produit where ID_PRODUIT=?");
-	            ps.setLong(1, id);
-
-	            status = ps.executeUpdate();
-	            conn.close();}
-	            catch(Exception e){System.out.println(e);}
-	            return status;
-	    }
 	    
 }

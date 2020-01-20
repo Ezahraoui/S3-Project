@@ -55,6 +55,7 @@ public class ModifierInfoChefProjet extends HttpServlet {
 		String github = request.getParameter("github");
 		String adresse = request.getParameter("adresse");
 		String tel = request.getParameter("tel");
+		String message = new String();
 
         if (id != null && !id.isEmpty()) {
         	ChefDeProjet cp = new ChefDeProjet();
@@ -67,10 +68,15 @@ public class ModifierInfoChefProjet extends HttpServlet {
             cp.setGithubCP(github);
             cp.setAdresseCP(adresse);
             cp.setNum_telephoneCP(tel);
-	
+            System.out.println("*****************************");
             ChefDeProjetDAO.update(cp);  
+            message ="Your details have been successfully updated. Return to : ";
+            System.out.println(message);
+     	    request.setAttribute("message", message);
+            
+            
         }
-        request.getRequestDispatcher("modifierInfoChefProjet.jsp").include(request,response);
+        request.getRequestDispatcher("/modifierInfoChefProjetSuccess.jsp").include(request,response);
 	}
 
 }

@@ -6,7 +6,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>Bootstrap Dashboard by Bootstrapious.com</title>
+<title>Login</title>
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="all,follow">
@@ -32,7 +32,7 @@
 <!-- Custom stylesheet - for your changes-->
 <link rel="stylesheet" href="css1/custom.css">
 <!-- Favicon-->
-<link rel="shortcut icon" href="img/favicon.ico">
+<link rel="shortcut icon" href="img1/Ecommerce Plateform.png">
 <!-- Form validation -->
 <script
   src="https://code.jquery.com/jquery-3.4.1.min.js"

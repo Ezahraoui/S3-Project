@@ -131,8 +131,8 @@
 						<div class="heading text-center">
 							<h2>Modifier vos informations</h2>
 						</div>
-			       </div>
-                    <div class="col-md-8 mx-auto">
+						
+						<div class="col-md-8 mx-auto">
                       <c:forEach items="${chefsDeProjet}" var="row" >
 						<form action="ModifierInfoChefProjet" method="post">
 							<div class="row">
@@ -183,6 +183,8 @@
 						</form>
 						</c:forEach>
 					</div>
+			       </div>
+                    
                 </div>
                 
               </div>
