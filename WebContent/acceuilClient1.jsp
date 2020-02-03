@@ -1,5 +1,11 @@
+<%@page import="bean.Client"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<c:if test="${ empty sessionScope.client}">
+		<jsp:forward page="/acceuilClient.jsp"/>
+</c:if>
+<%@taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
   <head>
@@ -57,7 +63,7 @@
 							</ul>
 							<div class="login">
 								<div class="logout">
-								<a href="login.jsp" class="login-btn"><i class="fa fa-sign-in"></i><span
+								<a href="Logout" class="login-btn"><i class="fa fa-sign-in"></i><span
 									class="d-none d-md-inline-block">Se déconnecter</span></a>
 
 							</div>
@@ -175,7 +181,7 @@
 			</div>
 		</div>
 		</header>
-      </section> -->
+      </section>
       <section style="background: url('img/photogrid.jpg') center center repeat; background-size: cover;" class="bar background-white relative-positioned">
         <div class="container">
           <!-- Carousel Start-->

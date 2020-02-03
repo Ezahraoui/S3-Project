@@ -1,5 +1,8 @@
 <%@page import="bean.ChefDeProjet"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<c:if test="${ empty sessionScope.chefDeProjet}">
+		<jsp:forward page="/acceuilClient.jsp"/>
+</c:if>
 <%@taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
 <%@page import="java.sql.*"%>
 <%@ page import="java.util.ArrayList"%>

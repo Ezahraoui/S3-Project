@@ -22,11 +22,14 @@ public class Logout extends HttpServlet {
             session.removeAttribute("administrateurTechnique");
             session.removeAttribute("chefDeProjet");*/
             session.invalidate();  
+        	
+        	//request.getSession().invalidate();
             response.getWriter().println("Session : " + session);
             
             RequestDispatcher dispatcher = request.getRequestDispatcher("acceuilClient.jsp");
             dispatcher.forward(request, response);
-        }
+    	
         
+    }
     }
 }

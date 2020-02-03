@@ -1,5 +1,8 @@
 <%@page import="bean.Client"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<c:if test="${ empty sessionScope.client}">
+		<jsp:forward page="/acceuilClient.jsp"/>
+</c:if>
 <%@taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 pageEncoding="UTF-8"%>
@@ -61,7 +64,7 @@ pageEncoding="UTF-8"%>
 										class="fa fa-envelope"></i></a></li>
 							</ul>
 							<div class="login">
-								<a href="logout.jsp"
+								<a href="Logout"
 									class="login-btn"><i class="fa fa-sign-in"></i><span
 									class="d-none d-md-inline-block">Se déconnecter</span></a>
 									<!-- <a href="register.jsp" class="signup-btn"><i
