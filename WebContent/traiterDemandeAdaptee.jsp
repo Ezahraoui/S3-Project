@@ -192,7 +192,7 @@
 																
 																<div class="col-sm-12">
 																	<div class="form-group">
-																	Observations : <input type="text" name="capaciteFinancement" value=<c:out value="${row.getCapaciteFinancement()}"/> class="form-control" disabled><br>
+																	Capacité financière : <input type="text" name="capaciteFinancement" value=<c:out value="${row.getCapaciteFinancement()}"/> class="form-control" disabled><br>
 																	</div>
 																</div>
 													      		

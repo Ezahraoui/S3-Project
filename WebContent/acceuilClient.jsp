@@ -188,21 +188,21 @@
               <div class="box-simple">
                 <div class="icon-outlined"><i class="fa fa-desktop" style="margin-top: 30px;"></i></div>
                 <h3 class="h4">Création de logiciels</h3>
-                <p>Fifth abundantly made Give sixth hath. Cattle creature i be don't them behold green moved fowl Moved life us beast good yielding. Have bring.</p>
+                
               </div>
             </div>
             <div class="col-lg-4 col-md-6">
               <div class="box-simple">
                 <div class="icon-outlined"><i class="fa fa-print" style="margin-top: 30px;"></i></div>
                 <h3 class="h4">Print</h3>
-                <p>Advantage old had otherwise sincerity dependent additions. It in adapted natural hastily is justice. Six draw you him full not mean evil. Prepare garrets it expense windows shewing do an.</p>
+               
               </div>
             </div>
             <div class="col-lg-4 col-md-6">
               <div class="box-simple">
                 <div class="icon-outlined"><i class="fa fa-globe" style="margin-top: 30px;"></i></div>
                 <h3 class="h4">Marketing</h3>
-                <p>Am terminated it excellence invitation projection as. She graceful shy believed distance use nay. Lively is people so basket ladies window expect.</p>
+                
               </div>
             </div>
           </div>
@@ -211,21 +211,21 @@
               <div class="box-simple">
                 <div class="icon-outlined"><i class="fa fa-lightbulb-o" style="margin-top: 30px;"></i></div>
                 <h3 class="h4">Consulting</h3>
-                <p>Fifth abundantly made Give sixth hath. Cattle creature i be don't them behold green moved fowl Moved life us beast good yielding. Have bring.</p>
+                
               </div>
             </div>
             <div class="col-lg-4 col-md-6">
               <div class="box-simple">
                 <div class="icon-outlined"><i class="fa fa-envelope-o" style="margin-top: 30px;"></i></div>
                 <h3 class="h4">Transformation digitale</h3>
-                <p>Advantage old had otherwise sincerity dependent additions. It in adapted natural hastily is justice. Six draw you him full not mean evil. Prepare garrets it expense windows shewing do an.</p>
+                
               </div>
             </div>
             <div class="col-lg-4 col-md-6">
               <div class="box-simple">
                 <div class="icon-outlined"><i class="fa fa-user" style="margin-top: 30px;"></i></div>
                 <h3 class="h4">Expérience client</h3>
-                <p>Am terminated it excellence invitation projection as. She graceful shy believed distance use nay. Lively is people so basket ladies window expect.</p>
+                
               </div>
             </div>
           </div>

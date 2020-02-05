@@ -1,5 +1,8 @@
 <%@page import="bean.ChefDeProjet"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<c:if test="${ empty sessionScope.chefDeProjet}">
+		<jsp:forward page="/acceuilClient.jsp"/>
+</c:if>
 <%@taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
 <%@page import="java.sql.*"%>
 <%@ page import="java.util.ArrayList"%>
@@ -55,12 +58,16 @@
        <div class="main-menu">
           <h5 class="sidenav-heading">Main</h5>
           <ul id="side-main-menu" class="side-menu list-unstyled">
+          	<li><a href="acceuilChefProjet.jsp" aria-expanded="false"> <i class="icon-interface-windows"></i>Home  </a>
+            </li>
           	<li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Demandes  </a>
               <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
                 <li><a href="TraiterDemandeAdaptee">Demande Adaptee</a></li>
                 <li><a href="TraiterDemandeMaintenance">Demande de Maintenance</a></li>
               </ul>
-            </li>                  
+            </li>        
+            <li><a href="ModifierInfoChefProjet" aria-expanded="false" > <i class="icon-interface-windows"></i>Modifier mon compte  </a>
+            </li>          
           </ul>
         </div>
       </div>
