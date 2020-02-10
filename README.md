@@ -8,3 +8,8 @@ eCommerce platform tailored to customers who need to buy softwares from supplier
 
 ## Orders
 ![alt text](WebContent/images1/commande.PNG)
+
+# Admin Page
+
+## Orders List
+![alt text](WebContent/images1/admin.PNG)
