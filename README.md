@@ -30,13 +30,3 @@ eCommerce platform tailored to customers who need to buy softwares from supplier
 ## Liste des commandes provenant du client
 ![alt text](WebContent/images1/ase4.PNG)
 
-<<<<<<< HEAD
-## Orders
-![alt text](WebContent/images1/commande.PNG)
-
-# Admin Page
-
-## Orders List
-![alt text](WebContent/images1/admin.PNG)
-=======
->>>>>>> add fr + readme
