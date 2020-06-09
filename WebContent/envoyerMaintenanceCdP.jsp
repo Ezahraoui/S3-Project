@@ -77,7 +77,7 @@
        <div class="main-menu">
           <h5 class="sidenav-heading">Main</h5>
           <ul id="side-main-menu" class="side-menu list-unstyled">
-          	<li><a href="acceuilAdminTechnique.jsp" aria-expanded="false"> <i class="icon-interface-windows"></i>Home  </a>
+          	<li><a href="acceuilAdminTechnique.jsp" aria-expanded="false"> <i class="icon-interface-windows"></i>Acceuil  </a>
             </li>
           	<li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Demandes  </a>
               <ul id="exampledropdownDropdown" class="collapse list-unstyled ">

@@ -77,7 +77,7 @@
 						<br>${message}
           			    <br><br>
 						<div class="form-group text-center">
-							<input type="submit" value="Login" class="btn btn-primary">
+							<input type="submit" value="Se connecter" class="btn btn-primary">
 							<!-- <a id="login" href="index.html" class="btn btn-primary">Login</a>
 							<a id="login" href="register.jsp" class="btn btn-primary">Sign
 								Up</a> -->
@@ -88,8 +88,7 @@
 
 
 					</form>
-					<a style="font-size: 15px;" href="#" class="forgot-pass">Forgot
-						Password?</a>
+					<a style="font-size: 15px;" href="#" class="forgot-pass">Mot de passe oublié?</a>
 				</div>
 				<div class="bg-image imgbg"></div>
 				<!--<div class="copyrights text-center">

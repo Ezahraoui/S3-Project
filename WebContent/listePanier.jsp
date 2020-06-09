@@ -146,10 +146,10 @@ pageEncoding="UTF-8"%>
 				<div id="navigation" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav ml-auto">
 						<li><a href="acceuilClient1.jsp"
-							href="javascript: void(0)" >Home</a></li>
+							href="javascript: void(0)" >Acceuil</a></li>
 							
 							<li class="nav-item dropdown"><a href="javascript: void(0)"
-							data-toggle="dropdown" class="dropdown-toggle">Softwares <b
+							data-toggle="dropdown" class="dropdown-toggle">Logiciels <b
 								class="caret"></b></a>
 							<ul class="dropdown-menu">
 								<li class="dropdown-item"><a href="ListeProduitsClient"

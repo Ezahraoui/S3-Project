@@ -131,7 +131,7 @@
 				<div id="navigation" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav ml-auto">
 						<li class="nav-item dropdown"><a href="javascript: void(0)"
-							data-toggle="dropdown" class="dropdown-toggle">Softwares <b
+							data-toggle="dropdown" class="dropdown-toggle">Logiciels <b
 								class="caret"></b></a>
 							<ul class="dropdown-menu">
 								<li class="dropdown-item"><a href="ListeProduitsClient"

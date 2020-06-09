@@ -106,8 +106,7 @@
 
 
 					</form>
-					<a style="font-size: 15px;" class="forgot-pass" href="loginChefProjet.jsp">Do You
-						have already an account? Click here</a>
+					<a style="font-size: 15px;" class="forgot-pass" href="loginChefProjet.jsp">Avez-vous déjà un compte? Cliquez ici</a>
 				</div>
 				<div class="bg-image imgbg"></div>
 				<!--<div class="copyrights text-center">
